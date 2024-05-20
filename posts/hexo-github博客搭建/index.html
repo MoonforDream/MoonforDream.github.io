@@ -16,35 +16,22 @@
   <meta name="author" content="Moon">
   <meta name="keywords" content="">
   
-    <meta name="description" content="用于对archlinux中根目录进行扩容操作">
+    <meta name="description" content="使用hexo+github低代码以及免费搭建个人博客">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Arch Linux根目录扩容">
-<meta property="og:url" content="https://moonfordream.github.io/Arch-Linux%E6%A0%B9%E7%9B%AE%E5%BD%95%E6%89%A9%E5%AE%B9/index.html">
+<meta property="og:title" content="hexo+github博客搭建">
+<meta property="og:url" content="https://moonfordream.github.io/posts/hexo-github%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/index.html">
 <meta property="og:site_name" content="Moon&#39;s Blog">
-<meta property="og:description" content="用于对archlinux中根目录进行扩容操作">
+<meta property="og:description" content="使用hexo+github低代码以及免费搭建个人博客">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/MoonforDream/photohouse/hexo/202405192230580.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/MoonforDream/photohouse/hexo/202405200010361.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/MoonforDream/photohouse/hexo/202405200010362.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/MoonforDream/photohouse/hexo/202405200010363.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/MoonforDream/photohouse/hexo/202405200010364.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/MoonforDream/photohouse/hexo/202405200010365.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/MoonforDream/photohouse/hexo/202405200010366.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/MoonforDream/photohouse/hexo/202405200010367.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/MoonforDream/photohouse/hexo/202405200010368.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/MoonforDream/photohouse/hexo/202405200010370.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/MoonforDream/photohouse/hexo/202405200010371.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/MoonforDream/photohouse/hexo/202405200010372.png">
-<meta property="article:published_time" content="2024-05-19T14:21:31.000Z">
-<meta property="article:modified_time" content="2024-05-20T02:12:17.444Z">
+<meta property="article:published_time" content="2024-05-18T18:22:13.000Z">
+<meta property="article:modified_time" content="2024-05-18T18:30:18.856Z">
 <meta property="article:author" content="Moon">
-<meta property="article:tag" content="Arch Linux">
+<meta property="article:tag" content="博客">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/MoonforDream/photohouse/hexo/202405192230580.png">
   
   
   
-  <title>Arch Linux根目录扩容 - Moon&#39;s Blog</title>
+  <title>hexo+github博客搭建 - Moon&#39;s Blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -210,7 +197,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Arch Linux根目录扩容"></span>
+            <span id="subtitle" data-typed-text="hexo+github博客搭建"></span>
           
         </div>
 
@@ -221,8 +208,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-05-19 22:21" pubdate>
-          2024年5月19日 晚上
+        <time datetime="2024-05-19 02:22" pubdate>
+          2024年5月19日 凌晨
         </time>
       </span>
     
@@ -233,7 +220,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          978 字
+          1k 字
         
       </span>
     
@@ -281,82 +268,83 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">Arch Linux根目录扩容</h1>
+            <h1 id="seo-header">hexo+github博客搭建</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="Arch-Linux根目录扩容"><a href="#Arch-Linux根目录扩容" class="headerlink" title="Arch Linux根目录扩容"></a>Arch Linux根目录扩容</h1><h3 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h3><p>开始进入archlinux时，还只是抱着试试的心态入手了arch系统，当时也就分配了70g的空间给根目录，当我成功配置成功后，用的久了，发现已经不想回到windows系统，而我的根目录的空间已经不够了，这期讲述<strong>使用其他带gparted的Linux系统USB驱动来进行扩容</strong>，这个方法很简单也很快，虽然不需要将数据移来移去，但是建议以免你自己的误操作还是先备份一下</p>
-<h3 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h3><ul>
-<li>需要自备一个U盘(8G就够了)</li>
-<li>安装制作系统驱动的制作软件<a target="_blank" rel="noopener" href="https://rufus.ie/en/">rufus</a>，点击跳转下载对应系统架构的程序</li>
-</ul>
-<p><img src="https://cdn.jsdelivr.net/gh/MoonforDream/photohouse/hexo/202405192230580.png" srcset="/img/loading.gif" lazyload alt="image-20240519223019731"></p>
+                <h3 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h3><p>个人之前用的是django加阿里云服务器搭建的<a target="_blank" rel="noopener" href="https://codebooks.xyz/">个人博客</a>，但是我发现这样的博客还是太麻烦了，费钱又费力(毕竟在使用的过程中也需要更新迭代)，所以有了hexo+github的这种简单省事的搭建博客。</p>
+<h3 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h3><ol>
+<li><strong>node.js</strong></li>
+<li><strong>git</strong></li>
+</ol>
+<p>这两个应用windows用户直接搜索下载安装就可以。 如果习惯了使用linux命令的朋友，推荐windows神器<code>cmder</code>。 可以直接在windows环境下使用linux命令，样式可调，再也不要用黑乎乎的cmd了，而且自带git，完全可以不用下载windows git。</p>
+<h3 id="正式安装hexo"><a href="#正式安装hexo" class="headerlink" title="正式安装hexo"></a>正式安装hexo</h3><p><a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/">hexo官方中文文档</a></p>
+<p>在node.js安装好的前提下，全局安装hexo 如何判断node.js是否安装成功？执行以下命令，如果能够看到版本号则说明安装成功了</p>
+<figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs crmsh"><span class="hljs-keyword">node</span> <span class="hljs-title">-v</span><br></code></pre></td></tr></table></figure>
+
+
+
+<p>安装<code>hexo</code></p>
+<figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs avrasm">npm install -g hexo-<span class="hljs-keyword">cli</span><br></code></pre></td></tr></table></figure>
+
+
+
+<p>自选合适的目录，新建文件夹<folder></p>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs vim"><span class="hljs-keyword">cd</span> <span class="hljs-symbol">&lt;folder&gt;</span><br>hexo init<br>npm install<br></code></pre></td></tr></table></figure>
+
+
+
+<p>不再赘述，直接看官方文档。</p>
+<h3 id="配置github"><a href="#配置github" class="headerlink" title="配置github"></a>配置github</h3><p>新建仓库，仓库名必须为**[your_name.github.io]**</p>
+<blockquote>
+<p>补充：本地配置github ssh连接，方便自动部署，以及clone你喜欢的主题(theme)</p>
+</blockquote>
+<p>windows用户直接在<code>c:/用户/youername/.ssh/</code>下查看是否有<code>id_rsa.pub</code>文件。 没有的话命令行执行命令<code>ssh-keygen -t rsa -C &quot;your eamil&quot;</code>，会自动生成<code>id_rsa.pub</code>文件，打开后复制。</p>
+<p>github-&gt;头像-&gt;Settings→SSH kyes→Add SSH key，粘贴复制的内容。</p>
+<p>配置本地账户</p>
+<figure class="highlight autoit"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs autoit">git config --<span class="hljs-keyword">global</span> user.name “your_username” <span class="hljs-meta">#设置用户名</span><br>git config --<span class="hljs-keyword">global</span> user.email “your_email” <span class="hljs-meta">#设置邮箱地址,最好使用注册邮箱地址</span><br></code></pre></td></tr></table></figure>
+
+
+
+<p>测试是否配置成功</p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs nginx"><span class="hljs-attribute">ssh</span> -T git<span class="hljs-variable">@github</span>.com<br></code></pre></td></tr></table></figure>
+
+
+
+<h3 id="hexo配置以及使用"><a href="#hexo配置以及使用" class="headerlink" title="hexo配置以及使用"></a>hexo配置以及使用</h3><p>有两个配置文件：</p>
 <ul>
-<li>一个带Gparted软件的Linux系统映像，这边我是使用pop os，下载地址：<a target="_blank" rel="noopener" href="https://pop.system76.com/%EF%BC%8C%E9%80%89%E6%8B%A9LTS%E7%89%88%E6%9C%AC(%E7%AC%AC%E4%B8%80%E4%B8%AA)%E5%B0%B1%E8%A1%8C">https://pop.system76.com/，选择LTS版本(第一个)就行</a></li>
+<li>一个是根目录下的<code>_config.yml</code>称为<code>站点配置</code>文件</li>
+<li>一个是<code>themes/landscape/_config.yml</code>称为<code>主题配置</code>文件(默认主题：landscape)</li>
 </ul>
-<p><img src="https://cdn.jsdelivr.net/gh/MoonforDream/photohouse/hexo/202405200010361.png" srcset="/img/loading.gif" lazyload alt="image-20240519223740926"></p>
-<ul>
-<li>用来windows分区的软件，我这里是使用傲梅分区助手(<a target="_blank" rel="noopener" href="https://www.disktool.cn/)%E6%88%96%E8%80%85MiniTool">https://www.disktool.cn/)或者MiniTool</a> Partition Wizard(<a target="_blank" rel="noopener" href="https://www.partitionwizard.com/)%EF%BC%8C%E6%88%91%E5%AE%9E%E9%99%85%E4%BD%BF%E7%94%A8%E7%9A%84%E6%98%AF%E5%82%B2%E6%A2%85%EF%BC%8C%E4%BD%86%E6%98%AF%E6%88%91%E4%BB%A5%E4%B8%8B%E6%BC%94%E7%A4%BA%E7%A4%BA%E4%BE%8B%E6%98%AF%E4%BB%A5mini">https://www.partitionwizard.com/)，我实际使用的是傲梅，但是我以下演示示例是以mini</a> tool的，但是操作基本一样</li>
-</ul>
-<h3 id="分出空闲空间"><a href="#分出空闲空间" class="headerlink" title="分出空闲空间"></a>分出空闲空间</h3><ol>
-<li>在Windows的开始标中右键进入磁盘管理</li>
-<li>找到要分出空间的盘，右键进行压缩卷</li>
-<li>选择你要给arch扩容的空间大小然后进行压缩</li>
+<p>站点配置如下：</p>
+<figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs dts"><span class="hljs-symbol">url:</span> https:<span class="hljs-comment">//yourname.github.io/</span><br><span class="hljs-symbol">theme:</span> landscape <span class="hljs-meta">#选择你想用的主题，我用的是indigo</span><br><span class="hljs-symbol">deploy:</span><br><span class="hljs-symbol">    type:</span> git <span class="hljs-meta"># 不要使用github</span><br><span class="hljs-symbol">    repo:</span> git@github.com:pengwenwu/pengwenwu.github.io.git <span class="hljs-meta"># 使用ssh连接</span><br><span class="hljs-symbol">    branch:</span> master <span class="hljs-meta"># 默认master分支</span><br><span class="hljs-symbol">    message:</span> add new blog <span class="hljs-meta"># 自动部署commit备注，可不填</span><br></code></pre></td></tr></table></figure>
+
+
+
+<h4 id="hexo常用命令"><a href="#hexo常用命令" class="headerlink" title="hexo常用命令"></a>hexo常用命令</h4><p><a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000002632530">hexo命令参考</a></p>
+<p><code>hexo n &quot;我的博客&quot;</code> &#x3D;&#x3D; <code>hexo new &quot;我的博客&quot;</code> #新建文章<br><code>hexo p</code> &#x3D;&#x3D; <code>hexo publish</code><br><code>hexo g</code> &#x3D;&#x3D; <code>hexo generate</code> #生成<br><code>hexo s</code> &#x3D;&#x3D; <code>hexo server</code> #启动服务本地预览<br><code>hexo d</code> &#x3D;&#x3D; <code>hexo deploy</code> #部署<br><code>hexo clean</code> #清除缓存 网页正常情况下可以忽略此条命令</p>
+<p><code>hexo server</code> #Hexo 会监视文件变动并自动更新，您无须重启服务器。<br><code>hexo server -s</code> #静态模式<br><code>hexo server -p 5000</code> #更改端口<br><code>hexo server -i 192.168.1.1</code> #自定义 IP</p>
+<p>在执行之前，记得安装自动部署 (–save 加不加的区别在于是否写入到依赖文件package.json中)</p>
+<figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ada">npm install hexo-deployer-git <span class="hljs-comment">--save</span><br></code></pre></td></tr></table></figure>
+
+
+
+<p>正常本地预览，直接执行<code>hexo s</code>,如果要发布话最好执行<code>clean</code>命令，会去删除生成的public文件，完整部署命令:<code>hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</code>。或者直接<code>hexo d -g</code></p>
+<h3 id="注意问题"><a href="#注意问题" class="headerlink" title="注意问题"></a>注意问题</h3><p>安装完自动部署后，是不需要本地git init新建仓库的。执行<code>hexo g</code>会在根目录生成public文件夹，自动部署， 本质是将public文件夹内容全部提交到仓库中去，默认会访问编译好的index.html。</p>
+<p>如果部署完，访问your_name.github.io 404,可能有下面几个原因</p>
+<ol>
+<li>首先检查仓库文件，是不是全都是public的文件内容，如果整个本地blog文件夹都提交了，首先清空 仓库，然后删除本地<code>.deploy_git</code>文件夹，再重新部署</li>
+<li>文件有报错，本地<code>hexo s</code>观察是否有报错。</li>
 </ol>
-<h3 id="调整位置"><a href="#调整位置" class="headerlink" title="调整位置"></a>调整位置</h3><ol>
-<li>下载好傲梅分区助手或者mini</li>
-<li>打开后找到自己压缩出来的空闲空间(一般都是在你压缩盘的后面)</li>
-<li>我们需要将这个空闲空间滑到archlinux的根分区的后面，如下图所示</li>
-</ol>
-<p>未滑动前：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/MoonforDream/photohouse/hexo/202405200010362.png" srcset="/img/loading.gif" lazyload alt="image-20240519233737823"></p>
-<p>滑动操作：右键选择移动操作，然后将所处的空间块(<code>不是移动空闲块而是已经分配的分区</code>)要往左移动就往左移动，往右移动就往右移动，<strong>只要将空闲块移动到arch的根目录分区后(一定是贴着的)即可</strong></p>
-<p>示例这边，移动了空闲空间块的后面那个分区将分区移动到空闲块左边</p>
-<p><img src="https://cdn.jsdelivr.net/gh/MoonforDream/photohouse/hexo/202405200010363.png" srcset="/img/loading.gif" lazyload alt="image-20240519234019104"></p>
-<p>将分区块往左移动，这样空闲块就移动到了这个分区的右边</p>
-<p><img src="https://cdn.jsdelivr.net/gh/MoonforDream/photohouse/hexo/202405200010364.png" srcset="/img/loading.gif" lazyload alt="image-20240519234136821"></p>
-<p>重复以上操作，直到空闲块free size在archlinux根目录分区arch root后面</p>
-<p><img src="https://cdn.jsdelivr.net/gh/MoonforDream/photohouse/hexo/202405200010365.png" srcset="/img/loading.gif" lazyload alt="image-20240519233306938"></p>
-<h3 id="制作U盘驱动"><a href="#制作U盘驱动" class="headerlink" title="制作U盘驱动"></a>制作U盘驱动</h3><ol>
-<li><p>在准备过程中，下载好pop os以及rufus</p>
-</li>
-<li><p>插入U盘，打开rufus</p>
-</li>
-<li><p>然后选择pop os系统映像</p>
-<p><img src="https://cdn.jsdelivr.net/gh/MoonforDream/photohouse/hexo/202405200010366.png" srcset="/img/loading.gif" lazyload alt="image-20240519234641624"></p>
-</li>
-<li><p>然后等待status状态是ready也就是开始按钮亮起时，点击开始，制作U盘驱动</p>
-</li>
-</ol>
-<h3 id="扩容"><a href="#扩容" class="headerlink" title="扩容"></a>扩容</h3><ol>
-<li><p>重启电脑(记住U盘别拔)</p>
-</li>
-<li><p>进入U盘驱动页面(双系统的一般都会直接显示，如果不行就可以查百度查你自己电脑进入U盘驱动方式)</p>
-</li>
-<li><p>选择你的U盘(刚刚制作的驱动U盘)</p>
-</li>
-<li><p>选择好回车进入，进行系统安装</p>
-</li>
-<li><p>进入到以下页面，点击对应应用列表</p>
-<p><img src="https://cdn.jsdelivr.net/gh/MoonforDream/photohouse/hexo/202405200010367.png" srcset="/img/loading.gif" lazyload alt="image-20240519235703703"></p>
-</li>
-<li><p>然后在搜索输入gparted，然后打开这个软件</p>
-</li>
-<li><p>找到archlinux的根目录，然后相应的空闲块应该就跟在后面，如图所示</p>
-<p><img src="https://cdn.jsdelivr.net/gh/MoonforDream/photohouse/hexo/202405200010368.png" srcset="/img/loading.gif" lazyload alt="image-20240519235932311"></p>
-</li>
-<li><p>选择arch的根目录分区右键选择resize选项，然后将根目录分区尾部移动完空白位置即可</p>
-<p>未分配：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/MoonforDream/photohouse/hexo/202405200010370.png" srcset="/img/loading.gif" lazyload alt="image-20240520000139592"></p>
-<p>分配后：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/MoonforDream/photohouse/hexo/202405200010371.png" srcset="/img/loading.gif" lazyload alt="image-20240520000313907"></p>
-</li>
-<li><p>然后点击resize后，回到软件主页面，点击左上角的勾勾按钮，然后点击确认分配的按钮，不点击就无法进行保存分区和空间分配，等待分配完即可</p>
-</li>
-</ol>
-<h3 id="尾言"><a href="#尾言" class="headerlink" title="尾言"></a>尾言</h3><p>如果以上步骤没有出错的话，那么恭喜你成功扩容了archlinux的根目录分区的空间大小，下图就是我自己成功分配后的空间啦。如果看文章没有看明白并且具备一定条件(懂的都懂，不懂的估计访问不了)的可以选择观看我给的链接的视频教学，视频地址：<a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=zE-3a6DX1ac">https://www.youtube.com/watch?v=zE-3a6DX1ac</a></p>
-<p><img src="https://cdn.jsdelivr.net/gh/MoonforDream/photohouse/hexo/202405200010372.png" srcset="/img/loading.gif" lazyload alt="screenshot_19052024_215649"></p>
+<p>不喜欢原主题的朋友，可以github去找喜欢的主题。执行命令</p>
+<figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs crmsh">git <span class="hljs-keyword">clone</span> <span class="hljs-title">XXXX</span>.next.git themes\next<br></code></pre></td></tr></table></figure>
+
+
+
+<p>这个会将新的主题下载到themes下对应的next目录，next为主题的名字。</p>
+<p>主题的配置，可以看文档，修改对应的<code>主题配置</code>文件。<br>我使用的主题是<code>indigo</code>,详细文档<a target="_blank" rel="noopener" href="https://github.com/yscoder/hexo-theme-indigo">indigo</a></p>
+<p><code>markdown</code>不会使用的朋友，参考链接<a target="_blank" rel="noopener" href="https://www.appinn.com/markdown/">markdown中文文档</a><br>如果没有ide的话，可以使用在线预览<a target="_blank" rel="noopener" href="https://www.zybuluo.com/mdeditor">Cmd Markdown</a></p>
 
                 
               </div>
@@ -375,7 +363,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/Arch-Linux/" class="category-chain-item">Arch Linux</a>
+  <a href="/categories/%E5%8D%9A%E5%AE%A2/" class="category-chain-item">博客</a>
   
   
 
@@ -390,7 +378,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/Arch-Linux/" class="print-no-link">#Arch Linux</a>
+        <a href="/tags/%E5%8D%9A%E5%AE%A2/" class="print-no-link">#博客</a>
       
     </div>
   
@@ -402,8 +390,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Arch Linux根目录扩容</div>
-      <div>https://moonfordream.github.io/Arch-Linux根目录扩容/</div>
+      <div>hexo+github博客搭建</div>
+      <div>https://moonfordream.github.io/posts/hexo-github博客搭建/</div>
     </div>
     <div class="license-meta">
       
@@ -447,9 +435,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/Linux%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/" title="Linux网络编程">
+                      <a href="/posts/Django%E6%A1%86%E6%9E%B6%E5%AD%A6%E4%B9%A0%E4%B8%8E%E5%BC%80%E5%8F%91/" title="Django框架学习与开发">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Linux网络编程</span>
+                        <span class="hidden-mobile">Django框架学习与开发</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -457,8 +445,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" title="数据结构与算法">
-                        <span class="hidden-mobile">数据结构与算法</span>
+                      <a href="/posts/Makefile%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/" title="Makefile基本使用">
+                        <span class="hidden-mobile">Makefile基本使用</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
