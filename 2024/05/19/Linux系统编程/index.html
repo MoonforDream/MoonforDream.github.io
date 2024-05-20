@@ -7,8 +7,8 @@
 
 <head>
   <meta charset="UTF-8">
-  <link rel="apple-touch-icon" sizes="76x76" href="https://cdn.jsdelivr.net/gh/MoonforDream/photohouse/hexo/202405190208396.jpg">
-  <link rel="icon" href="https://cdn.jsdelivr.net/gh/MoonforDream/photohouse/hexo/202405190208396.jpg">
+  <link rel="apple-touch-icon" sizes="76x76" href="https://gitee.com/mfcky/photohouse/raw/master//hexo/202405190208396.jpg">
+  <link rel="icon" href="https://gitee.com/mfcky/photohouse/raw/master//hexo/202405190208396.jpg">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
@@ -23,17 +23,17 @@
 <meta property="og:site_name" content="Moon&#39;s Blog">
 <meta property="og:description" content="讲解在Linux下进行编程，讲解Linux系统调用函数，以及Linux系统知识。">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/MoonforDream/photohouse/hexo/202405191516573.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/MoonforDream/photohouse/hexo/202405191516574.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/MoonforDream/photohouse/hexo/202405191516575.png">
+<meta property="og:image" content="https://gitee.com/mfcky/photohouse/raw/master//hexo/202405191516573.png">
+<meta property="og:image" content="https://gitee.com/mfcky/photohouse/raw/master//hexo/202405191516574.png">
+<meta property="og:image" content="https://gitee.com/mfcky/photohouse/raw/master//hexo/202405191516575.png">
 <meta property="article:published_time" content="2024-05-19T07:07:16.000Z">
-<meta property="article:modified_time" content="2024-05-19T08:05:40.385Z">
+<meta property="article:modified_time" content="2024-05-20T01:50:25.395Z">
 <meta property="article:author" content="Moon">
 <meta property="article:tag" content="后台开发">
 <meta property="article:tag" content="Linux">
 <meta property="article:tag" content="C&#x2F;C++">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/MoonforDream/photohouse/hexo/202405191516573.png">
+<meta name="twitter:image" content="https://gitee.com/mfcky/photohouse/raw/master//hexo/202405191516573.png">
   
   
   
@@ -197,7 +197,7 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('https://cdn.jsdelivr.net/gh/MoonforDream/photohouse/hexo/202405190159278.png') no-repeat center center; background-size: cover;">
+     style="background: url('https://gitee.com/mfcky/photohouse/raw/master//hexo/202405190159278.png') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
@@ -342,7 +342,7 @@
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs shell">export LD_LIBRARY_PATH=库路径<br><br>./test.out<br><span class="hljs-meta prompt_">#</span><span class="language-bash">运行成功</span><br></code></pre></td></tr></table></figure>
 </li>
 <li><p>**编辑终端配置文件(永久)**：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_">#</span><span class="language-bash">去到你对应的终端，bash就是.bashrc,zsh就是.zshrc</span><br>vim .zshrc<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_">#</span><span class="language-bash">添加,库路径建议使用绝对路径</span><br>export LD_LIBRARY_PATH=库路径<br><span class="hljs-meta prompt_">#</span><span class="language-bash">保存</span><br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_">#</span><span class="language-bash">生效配置文件</span><br>source .zshrc<br><br>./test.out<br><span class="hljs-meta prompt_">#</span><span class="language-bash">运行成功</span><br></code></pre></td></tr></table></figure></li>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_">#</span><span class="language-bash">去到你对应的终端，bash就是.bashrc,zsh就是.zshrc</span><br>vim .zshrc<br>   <br><span class="hljs-meta prompt_">#</span><span class="language-bash">添加,库路径建议使用绝对路径</span><br>export LD_LIBRARY_PATH=库路径<br><span class="hljs-meta prompt_">#</span><span class="language-bash">保存</span><br>   <br><span class="hljs-meta prompt_">#</span><span class="language-bash">生效配置文件</span><br>source .zshrc<br>   <br>./test.out<br><span class="hljs-meta prompt_">#</span><span class="language-bash">运行成功</span><br></code></pre></td></tr></table></figure></li>
 </ol>
 </blockquote>
 </li>
@@ -541,7 +541,7 @@
 
 
 <p>inode结构体：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/MoonforDream/photohouse/hexo/202405191516573.png" srcset="/img/loading.gif" lazyload alt="image-20240425122528875"></p>
+<p><img src="https://gitee.com/mfcky/photohouse/raw/master//hexo/202405191516573.png" srcset="/img/loading.gif" lazyload alt="image-20240425122528875"></p>
 <p><strong>应用场景</strong>：</p>
 <ul>
 <li><code>buf.st_size</code>：获取文件大小</li>
@@ -1517,7 +1517,7 @@
 <li><code>存储映射I/O</code><strong>使一个磁盘文件与存储空间中的一个缓冲区相映射</strong>，当从缓冲区取数据相当于读文件中相应字节，将数据存入缓冲区，则相应的字节就自动写入文件。</li>
 <li><strong>存储映射可以</strong>在不适用read和write函数的情况下，<strong>使用地址(指针)完成I&#x2F;O操作</strong></li>
 </ul>
-<p><img src="https://cdn.jsdelivr.net/gh/MoonforDream/photohouse/hexo/202405191516574.png" srcset="/img/loading.gif" lazyload alt="image-20240429083055810"></p>
+<p><img src="https://gitee.com/mfcky/photohouse/raw/master//hexo/202405191516574.png" srcset="/img/loading.gif" lazyload alt="image-20240429083055810"></p>
 <p><strong>使用注意事项</strong>：</p>
 <ol>
 <li>用于创建映射区的文件大小为0,实际指定非0大小创建映射区，出”总线错误(SIGBUS)”</li>
@@ -2132,7 +2132,7 @@
 
 
 
-<h5 id="内核实现信号捕捉过程"><a href="#内核实现信号捕捉过程" class="headerlink" title="内核实现信号捕捉过程"></a>内核实现信号捕捉过程</h5><p><img src="https://cdn.jsdelivr.net/gh/MoonforDream/photohouse/hexo/202405191516575.png" srcset="/img/loading.gif" lazyload alt="image-20240501211733359"></p>
+<h5 id="内核实现信号捕捉过程"><a href="#内核实现信号捕捉过程" class="headerlink" title="内核实现信号捕捉过程"></a>内核实现信号捕捉过程</h5><p><img src="https://gitee.com/mfcky/photohouse/raw/master//hexo/202405191516575.png" srcset="/img/loading.gif" lazyload alt="image-20240501211733359"></p>
 <h4 id="子进程回收"><a href="#子进程回收" class="headerlink" title="子进程回收"></a>子进程回收</h4><h5 id="SIGCHLD信号"><a href="#SIGCHLD信号" class="headerlink" title="SIGCHLD信号"></a>SIGCHLD信号</h5><p><strong>产生条件</strong></p>
 <ul>
 <li><strong>当子进程状态发生变化，就会产生SIGCHLD信号</strong>(例如子进程终止)</li>
