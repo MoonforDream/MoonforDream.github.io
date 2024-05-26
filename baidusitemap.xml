@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://moonfordream.github.io//posts/Linux%E5%A4%9A%E7%BA%BF%E7%A8%8B%E6%9C%8D%E5%8A%A1%E7%AB%AF%E7%BC%96%E7%A8%8B-%E4%BD%BF%E7%94%A8muduo-C-%E7%BD%91%E7%BB%9C%E5%BA%93/</loc>
-    <lastmod>2024-05-26</lastmod>
-  </url>
-  <url>
     <loc>https://moonfordream.github.io//posts/Django%E6%A1%86%E6%9E%B6%E5%AD%A6%E4%B9%A0%E4%B8%8E%E5%BC%80%E5%8F%91/</loc>
     <lastmod>2024-05-20</lastmod>
   </url>
