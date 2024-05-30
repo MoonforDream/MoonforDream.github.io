@@ -57,7 +57,7 @@
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/MoonforDream/photohouse/hexo/202405191529620.png">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/MoonforDream/photohouse/hexo/202405191529621.png">
 <meta property="article:published_time" content="2024-05-19T07:07:29.000Z">
-<meta property="article:modified_time" content="2024-05-20T02:11:58.026Z">
+<meta property="article:modified_time" content="2024-05-30T14:39:52.623Z">
 <meta property="article:author" content="Moon">
 <meta property="article:tag" content="后台开发">
 <meta property="article:tag" content="C&#x2F;C++">
@@ -309,7 +309,7 @@
             
               <div class="markdown-body">
                 
-                <h1 id="数据结构与算法"><a href="#数据结构与算法" class="headerlink" title="数据结构与算法"></a>数据结构与算法</h1><h2 id="算法性能分析"><a href="#算法性能分析" class="headerlink" title="算法性能分析"></a>算法性能分析</h2><p><strong>算法</strong>是对特定问题求解方法和步骤的一种描述，它是指令的有限序列。其中每个指令表示一个或多个操作。</p>
+                <h1 id="算法性能分析"><a href="#算法性能分析" class="headerlink" title="算法性能分析"></a>算法性能分析</h1><p><strong>算法</strong>是对特定问题求解方法和步骤的一种描述，它是指令的有限序列。其中每个指令表示一个或多个操作。</p>
 <p><strong>算法特性</strong>：</p>
 <ul>
 <li><strong>有穷性</strong>：一个算法必须总是在执行有穷步之后结束，且每一步都在有穷时间内完成。</li>
@@ -331,7 +331,7 @@
 <li><strong>空间效率</strong>：指的是算法执行过程中所耗费的存储空间。</li>
 <li><em>注意</em>：时间效率和空间效率有时候是矛盾的。</li>
 </ul>
-<h3 id="时间复杂度的渐进表示法"><a href="#时间复杂度的渐进表示法" class="headerlink" title="时间复杂度的渐进表示法"></a><strong>时间复杂度的渐进表示法</strong></h3><ul>
+<h2 id="时间复杂度的渐进表示法"><a href="#时间复杂度的渐进表示法" class="headerlink" title="时间复杂度的渐进表示法"></a><strong>时间复杂度的渐进表示法</strong></h2><ul>
 <li><p>为了便于比较不同算法的时间效率，我们仅仅比较他们的数量级。</p>
 <p>例如：两个不同的算法，时间消耗分别是：T1(n)&#x3D;10n² 与T2(n)&#x3D;5n³，显然T1时间效率要比T2的高。所以如果选择会选择T1算法</p>
 </li>
@@ -369,7 +369,7 @@
 <ul>
 <li><strong>递归算法时间复杂度等于每次递归的时间复杂度*递归总次数(递归树的总节点数)</strong></li>
 </ul>
-<h3 id="空间复杂度的渐进表示法"><a href="#空间复杂度的渐进表示法" class="headerlink" title="空间复杂度的渐进表示法"></a>空间复杂度的渐进表示法</h3><ul>
+<h2 id="空间复杂度的渐进表示法"><a href="#空间复杂度的渐进表示法" class="headerlink" title="空间复杂度的渐进表示法"></a>空间复杂度的渐进表示法</h2><ul>
 <li><p><strong>空间复杂度</strong>：算法所需存储空间的度量，记作：<code>S(n)=O(f(n))</code>,其中n为问题的规模(或大小)</p>
 </li>
 <li><p>算法要占据的空间</p>
@@ -381,7 +381,7 @@
 <li><p><strong>例题</strong>:</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs c++">【算法<span class="hljs-number">1</span>】<br><span class="hljs-keyword">for</span>(i=<span class="hljs-number">0</span>;i&lt;n/<span class="hljs-number">2</span>;i++)&#123;<br>    t=a[i];<br>    a[i]=a[n-i<span class="hljs-number">-1</span>];<br>    a[n-i<span class="hljs-number">-1</span>]=t;<br>&#125;<br><span class="hljs-built_in">S</span>(n)=<span class="hljs-built_in">O</span>(<span class="hljs-number">1</span>),就一个t是临时存储空间变量<br>    <br>【算法<span class="hljs-number">2</span>】<br><span class="hljs-keyword">for</span>(i=<span class="hljs-number">0</span>;i&lt;n;i++)&#123;<br>    b[i]=a[n-i<span class="hljs-number">-1</span>];<br>&#125;<br><span class="hljs-keyword">for</span>(i=<span class="hljs-number">0</span>;i&lt;n;i++)&#123;<br>    a[i]=b[i];<br>&#125;<br><span class="hljs-built_in">S</span>(n)=<span class="hljs-built_in">O</span>(n),因为a数组有多少元素，则临时存储空间b数组也需要多少元素，则空间复杂度应该就与n有关<br></code></pre></td></tr></table></figure></li>
 </ul>
-<h2 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h2><h3 id="最大子序列和求解问题"><a href="#最大子序列和求解问题" class="headerlink" title="最大子序列和求解问题"></a>最大子序列和求解问题</h3><h4 id="暴力求解"><a href="#暴力求解" class="headerlink" title="暴力求解"></a>暴力求解</h4><ul>
+<h1 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h1><h2 id="最大子序列和求解问题"><a href="#最大子序列和求解问题" class="headerlink" title="最大子序列和求解问题"></a>最大子序列和求解问题</h2><h3 id="暴力求解"><a href="#暴力求解" class="headerlink" title="暴力求解"></a>暴力求解</h3><ul>
 <li>直接利用嵌套循环将每次序列和求出来，并跟当前最大序列和比较，得出最大序列和，时间复杂度为<em>O(n³)</em></li>
 </ul>
 <p>代码：</p>
@@ -389,7 +389,7 @@
 
 
 
-<h4 id="微优化解法"><a href="#微优化解法" class="headerlink" title="微优化解法"></a>微优化解法</h4><ul>
+<h3 id="微优化解法"><a href="#微优化解法" class="headerlink" title="微优化解法"></a>微优化解法</h3><ul>
 <li>将比较部分的循环优化成一个边加边比较的算法，比暴力解法减少一层循环，时间复杂度为<em>O(n²)</em></li>
 </ul>
 <p>代码：</p>
@@ -399,7 +399,7 @@
 
 
 
-<h4 id="分治法求解"><a href="#分治法求解" class="headerlink" title="分治法求解"></a>分治法求解</h4><p><strong>分治法概念</strong>：</p>
+<h3 id="分治法求解"><a href="#分治法求解" class="headerlink" title="分治法求解"></a>分治法求解</h3><p><strong>分治法概念</strong>：</p>
 <ul>
 <li>就是将复杂的问题分成小问题，然后解决小问题在通过处理将小问题的解法合并在一起成为大问题的解法。</li>
 </ul>
@@ -416,7 +416,7 @@
 
 
 
-<h4 id="贪心解法-最快最简单解法"><a href="#贪心解法-最快最简单解法" class="headerlink" title="贪心解法(最快最简单解法)"></a>贪心解法(最快最简单解法)</h4><ul>
+<h3 id="贪心解法-最快最简单解法"><a href="#贪心解法-最快最简单解法" class="headerlink" title="贪心解法(最快最简单解法)"></a>贪心解法(最快最简单解法)</h3><ul>
 <li>该解法也是一种边加边比较，但是它只有一层循环，它的本质就是通过每次相加然后在比较的同时，当他的当前sum不大于最大sum时，并且该sum&lt;0则我们将它归0，这样进行求解序列和时，就能保证它能主动找到正数和，正数和是最有可能成为最大序列和的，该算法的时间复杂度为<em>O(n)</em></li>
 </ul>
 <p>代码：</p>
@@ -430,7 +430,7 @@
 
 
 
-<h3 id="二分查找"><a href="#二分查找" class="headerlink" title="二分查找"></a>二分查找</h3><p><strong>概念</strong>：</p>
+<h2 id="二分查找"><a href="#二分查找" class="headerlink" title="二分查找"></a>二分查找</h2><p><strong>概念</strong>：</p>
 <ul>
 <li><strong>针对于已经预先排序好的数据</strong>，每次将数据进行对半查找，然后看它中间的数据是否是要找的，如果是就返回中间位置，不是就判断该数据是在前半部分还是后半部，然后在进而取其中部，看其是否找到，然后如果还没找到就一直重复操作，直到找到为止，该算法时间复杂度为<em>O(logn)</em></li>
 </ul>
@@ -450,7 +450,7 @@
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-comment">//可以用lower_bound()函数代替</span><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">search</span><span class="hljs-params">(vector&lt;<span class="hljs-type">int</span>&gt;&amp; nums, <span class="hljs-type">int</span> target)</span> </span>&#123;<br>        <span class="hljs-type">int</span> l=<span class="hljs-number">0</span>,r=nums.<span class="hljs-built_in">size</span>()<span class="hljs-number">-1</span>;<br>        <span class="hljs-keyword">while</span> (l &lt; r)&#123;<br>            <span class="hljs-type">int</span> mid = (l + r) &gt;&gt; <span class="hljs-number">1</span>;<br>            <span class="hljs-keyword">if</span> (nums[mid]&gt;=target) r = mid;<br>            <span class="hljs-keyword">else</span> l= mid+<span class="hljs-number">1</span>;<br>        &#125;<br>        <span class="hljs-keyword">return</span> nums[r]!=target?<span class="hljs-number">-1</span>:r;<br>    &#125;<br></code></pre></td></tr></table></figure></li>
 </ul>
 <p><strong>开区间</strong>：将闭区间代码中if判断中的等号去掉即可</p>
-<h3 id="欧几里德算法"><a href="#欧几里德算法" class="headerlink" title="欧几里德算法"></a>欧几里德算法</h3><p><strong>概念</strong>：</p>
+<h2 id="欧几里德算法"><a href="#欧几里德算法" class="headerlink" title="欧几里德算法"></a>欧几里德算法</h2><p><strong>概念</strong>：</p>
 <ul>
 <li>用于求两个数的<strong>最大公约数</strong>(两个数都可以共同整除的最大数)，利用不断相互取余，直到其中一个余数为0，则最大公约数为不为0的余数，该算法的时间复杂度为<em>O(logn)</em></li>
 </ul>
@@ -463,7 +463,7 @@
 
 
 
-<h3 id="快速幂算法"><a href="#快速幂算法" class="headerlink" title="快速幂算法"></a>快速幂算法</h3><p><strong>概念</strong>：</p>
+<h2 id="快速幂算法"><a href="#快速幂算法" class="headerlink" title="快速幂算法"></a>快速幂算法</h2><p><strong>概念</strong>：</p>
 <ul>
 <li>计算X<sup>N</sup>的最常见的算法是使用N-1次乘法自乘，但是可以使用一种将<strong>利用分治思想跟递归结合的算法</strong>更好，效率更高。判断N是偶数还是奇数，如果是偶数的话，我们有X<sup>N</sup>&#x3D;X<sup>N&#x2F;2</sup>*X<sup>N&#x2F;2</sup>，如果为奇数，我们有X<sup>N</sup>&#x3D;X<sup>(N-1)&#x2F;2</sup>*X<sup>(N-1)&#x2F;2</sup>*X，然后在不断的递归并将N等于0和N等于1为递归的基准情形，当N等于1返回X，该算法的时间复杂度为<em>O(logn)</em></li>
 </ul>
@@ -482,11 +482,11 @@
 <li><p><strong>位运算加速</strong>：假设我们要求a的11次方那么他会分解成8+2+1，那如何将其分解成8+2+1的情况，我们<strong>可以将其转换成二进制</strong>，11的二进制为1011，11&#x3D;1*2<sup>3</sup>+0*2<sup>2</sup>+1*<sup>1</sup>+1*2<sup>0</sup>，这样<strong>我们每次取11的二进制的最后一位这样就能分解成8+2+1了</strong>。</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-function"><span class="hljs-type">long</span> <span class="hljs-type">long</span> <span class="hljs-title">quickpow</span><span class="hljs-params">(<span class="hljs-type">long</span> <span class="hljs-type">long</span> a,<span class="hljs-type">long</span> <span class="hljs-type">long</span> b,<span class="hljs-type">int</span> mod)</span></span>&#123;<br>    <span class="hljs-type">long</span> <span class="hljs-type">long</span> res=<span class="hljs-number">1</span>;<br>    <span class="hljs-keyword">if</span>(b==<span class="hljs-number">0</span>) <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;<br>    <span class="hljs-keyword">while</span>(b)&#123;<br>        <span class="hljs-comment">//b&amp;1就可以等价于b%2==1，如果b为偶数b&amp;1==0，为奇数b&amp;1==1</span><br>        <span class="hljs-keyword">if</span>(b&amp;<span class="hljs-number">1</span>)&#123;<br>            res=res*a%mod;<br>        &#125;<br>        b&gt;&gt;=<span class="hljs-number">1</span>;  <span class="hljs-comment">//等价于b/=2</span><br>        a=a*a%mod;<br>    &#125;<br>    <span class="hljs-keyword">return</span> res;<br>&#125;<br></code></pre></td></tr></table></figure></li>
 </ul>
-<h3 id="素数筛"><a href="#素数筛" class="headerlink" title="素数筛"></a>素数筛</h3><p><strong>引言</strong>：</p>
+<h2 id="素数筛"><a href="#素数筛" class="headerlink" title="素数筛"></a>素数筛</h2><p><strong>引言</strong>：</p>
 <ul>
 <li><code>素数(质数)</code>：<strong>除了1和自己本身之外，没有任何因子的数</strong>叫做素数(质数)</li>
 </ul>
-<h4 id="朴素筛法-优化版"><a href="#朴素筛法-优化版" class="headerlink" title="朴素筛法(优化版)"></a>朴素筛法(优化版)</h4><p><strong>概念</strong>：</p>
+<h3 id="朴素筛法-优化版"><a href="#朴素筛法-优化版" class="headerlink" title="朴素筛法(优化版)"></a>朴素筛法(优化版)</h3><p><strong>概念</strong>：</p>
 <ul>
 <li><code>朴素筛法</code>：是<strong>直接暴力枚举2到当前判断的数x(不包括)，然后看在这范围内是否存在因子，如果存在就不是素数</strong>，不存在就是素数，时间复杂度为<code>O(n*n)</code></li>
 <li><code>优化版</code>：优化版是用到了一个数学性质进行优化，使其<strong>只需要判断2到sqrt(x)的范围内</strong>，是否存在x的因子即可，时间复杂度为<code>O(n*sqrt(n))</code></li>
@@ -512,7 +512,7 @@
 
 
 
-<h4 id="欧拉筛-线性筛"><a href="#欧拉筛-线性筛" class="headerlink" title="欧拉筛(线性筛)"></a>欧拉筛(线性筛)</h4><p><strong>概念</strong>：</p>
+<h3 id="欧拉筛-线性筛"><a href="#欧拉筛-线性筛" class="headerlink" title="欧拉筛(线性筛)"></a>欧拉筛(线性筛)</h3><p><strong>概念</strong>：</p>
 <ul>
 <li><code>欧拉筛</code>：<strong>利用合数的数学性质</strong>，可以将素数筛的算法优化到时间复杂度为<code>O(n)</code></li>
 </ul>
@@ -546,12 +546,12 @@
 
 
 
-<h3 id="排序算法"><a href="#排序算法" class="headerlink" title="排序算法"></a>排序算法</h3><p><strong>概念</strong>：</p>
+<h2 id="排序算法"><a href="#排序算法" class="headerlink" title="排序算法"></a>排序算法</h2><p><strong>概念</strong>：</p>
 <ul>
 <li>我们在的排序工作能<strong>在主存中</strong>完成的，我们就叫这种算法叫做<strong>内部排序</strong></li>
 <li>不能在主存中完成而必须<strong>在磁盘或磁带上完成</strong>的排序算法叫做<strong>外部排序</strong></li>
 </ul>
-<h4 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h4><p><strong>概念</strong>：</p>
+<h3 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h3><p><strong>概念</strong>：</p>
 <ul>
 <li><strong>冒泡排序</strong>是一个很简单的排序算法，冒泡排序是<strong>比较相邻的元素</strong>，如果第一个比第二个大，就交换他们两个，对每一对相邻元素做同样的工作，执行完毕后，找到第一个最大值，重复以上步骤，<strong>每次比较次数-1</strong>，直到不需要比较为止。</li>
 <li><em>冒泡排序是一种每一轮排序遍历时，抛出当前遍历时的最大值来进行一个到最后升序的排序方法</em></li>
@@ -572,7 +572,7 @@
 
 
 
-<h4 id="插入排序"><a href="#插入排序" class="headerlink" title="插入排序"></a>插入排序</h4><p><strong>概念</strong>：</p>
+<h3 id="插入排序"><a href="#插入排序" class="headerlink" title="插入排序"></a>插入排序</h3><p><strong>概念</strong>：</p>
 <ul>
 <li><strong>插入排序(insertsort)<strong>：插入排序是一个</strong>基于比较移动数据</strong>来实现有序化的算法，<em>时间复杂度为O(N²)</em></li>
 <li>插入排序<strong>根据元素的个数N进行N-1趟排序</strong>，从<strong>第一趟开始</strong>，在<strong>第P趟</strong>，我们将<strong>数组索引第P位的元素或者元素位于第P+1位置上的元素与该元素前面的所有元素进行比较</strong>，比较后<strong>找到</strong>该元素存在的<strong>对应位置进行移动或者叫做插入(不是交换)</strong></li>
@@ -595,7 +595,7 @@
 
 
 
-<h4 id="希尔排序"><a href="#希尔排序" class="headerlink" title="希尔排序"></a>希尔排序</h4><p><strong>概念</strong>：</p>
+<h3 id="希尔排序"><a href="#希尔排序" class="headerlink" title="希尔排序"></a>希尔排序</h3><p><strong>概念</strong>：</p>
 <ul>
 <li><strong>希尔排序(shellsort)<strong>是</strong>基于插入排序所优化的算法</strong>，该算法<strong>依靠增量序列来使到减少相邻元素交换排序的机会以及减少排序执行的趟次</strong>，这将比插入排序所花费的<strong>时间减少</strong>，即使希尔排序的<em>时间复杂度也为O(N²)</em></li>
 <li>关于<strong>增量序列h</strong>，我们将数组的所有元素，<strong>按照索引号i,i+h,i+2h….(在数组索引范围0-N-1之内)作为一个序列进行排序</strong>，而这个<strong>排序是按照序列内的索引号排序</strong>因此不会影响到其他索引号的排序，而形成<strong>增量序列的h的选取可以自定义</strong>，但是<strong>希尔建议使用h1&#x3D;(N-1)&#x2F;2,h2&#x3D;h1&#x2F;2直到hk&#x3D;1的方式进行形成增量序列(但不是很好)。</strong></li>
@@ -622,7 +622,7 @@
 
 
 
-<h4 id="堆排序"><a href="#堆排序" class="headerlink" title="堆排序"></a>堆排序</h4><p><strong>概念</strong>：</p>
+<h3 id="堆排序"><a href="#堆排序" class="headerlink" title="堆排序"></a>堆排序</h3><p><strong>概念</strong>：</p>
 <ul>
 <li>堆排序(heapsort)：是一个<strong>基于二叉堆的排序算法</strong>,但是他又跟二叉堆的不一样，二叉堆的数组索引为0的是个哑节点，但是<strong>堆排序是得从0开始的</strong></li>
 <li>堆排序的实现需要根据要实现顺序的方式，<strong>将无序的数组在原数组下重新构建成大根堆&#x2F;小根堆数组</strong>，如果要实现<strong>升序</strong>，就需要<strong>构建成大根堆</strong>，实现<strong>降序</strong>，就需要<strong>构建成小根堆数组</strong>。<strong>构建完</strong>堆数组，然后<strong>以类似堆中操作删除最大元&#x2F;最小元的方式，将数组实现有序</strong>。</li>
@@ -648,7 +648,7 @@
 
 
 
-<h4 id="归并排序"><a href="#归并排序" class="headerlink" title="归并排序"></a>归并排序</h4><p><strong>概念</strong>：</p>
+<h3 id="归并排序"><a href="#归并排序" class="headerlink" title="归并排序"></a>归并排序</h3><p><strong>概念</strong>：</p>
 <ul>
 <li><strong>归并排序(mergesort)<strong>：是基于</strong>递归和分治策略</strong>的排序算法，*其时间复杂度为O(nlogn)*，但是归并排序不利于主存内排序，因为合并数组需要线性附加内存，如果N很大，则需要的表很大。</li>
 <li>归并算法是将一个无序要排序的数组，将其分半，然后<strong>用递归，将数组一次次分半</strong>，然后利用<strong>递归到</strong>最后一层也就是<strong>数组无法再分了</strong>，<strong>递归返回时，开辟一个新数组，就用合并的操作将其有序的放入新数组</strong>，最后递归完毕就会得到一个有序的数组了。</li>
@@ -676,7 +676,7 @@
 
 
 
-<h4 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h4><p><strong>概念</strong>：</p>
+<h3 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h3><p><strong>概念</strong>：</p>
 <ul>
 <li><p>**快速排序(quicksort)*<em>：也是一种分治的递归算法，时间复杂度为</em>O(nlogn)*，是实践中最快的已知排序算法</p>
 </li>
@@ -721,7 +721,7 @@
 <li><p>另一种快速排序，<strong>每一次递归，我们将数组最左端就当作枢纽元</strong>，还是<strong>左端left开始跟right指向的元素跟枢纽元的值比较</strong>，an[left]&lt;枢纽元left++，an[right]&gt;枢纽元right–，<strong>直到找到an[left]&gt;枢纽元，an[right]&lt;枢纽元的时候进行交换an[left]和an[right]<strong>，</strong>直到left&#x3D;&#x3D;right，就将枢纽元(也就是最左端的元素)与left当前所在位置进行交换</strong>，使得枢纽元放在正确的位置，然后在<strong>以left为界限分治。</strong></p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">quicksort</span><span class="hljs-params">(<span class="hljs-type">int</span> *an,<span class="hljs-type">int</span> low,<span class="hljs-type">int</span> high)</span></span>&#123;<br>    <span class="hljs-type">int</span> left=low,right=high;<br>    <span class="hljs-keyword">if</span>(left&lt;high) <span class="hljs-keyword">return</span>;<br>    <span class="hljs-type">int</span> temp=an[left];   <span class="hljs-comment">//枢纽元</span><br>    <span class="hljs-keyword">while</span>(left!=right)&#123;<br>        <span class="hljs-comment">//找寻右边区域小于枢纽元的元素位置</span><br>        <span class="hljs-keyword">while</span>(an[right]&gt;=temp&amp;&amp;left&lt;right)&#123;<br>            right--;<br>        &#125;<br>        <span class="hljs-comment">//找寻左边区域大于枢纽元的元素位置</span><br>        <span class="hljs-keyword">while</span>(an[left]&lt;=temp&amp;&amp;left&lt;right)&#123;<br>            left++;<br>        &#125;<br>        <span class="hljs-comment">//将找到的进行交换使得左边区域小于枢纽元，右边区域大于枢纽元</span><br>        <span class="hljs-keyword">if</span>(left&lt;right)&#123;<br>            <span class="hljs-built_in">swap</span>(an[left],an[right]);<br>        &#125;<br>    &#125;<br>    <span class="hljs-comment">//将枢纽元换到正确的中间区域</span><br>    <span class="hljs-built_in">swap</span>(an[low],an[left]);<br>    <span class="hljs-comment">//以left也就是当前枢纽元所在位置为界限进行分治</span><br>    <span class="hljs-built_in">quicksort</span>(an,low,left<span class="hljs-number">-1</span>);<br>    <span class="hljs-built_in">quicksort</span>(an,left+<span class="hljs-number">1</span>,high);<br>&#125;<br></code></pre></td></tr></table></figure></li>
 </ul>
-<h4 id="桶式排序"><a href="#桶式排序" class="headerlink" title="桶式排序"></a>桶式排序</h4><p><strong>概念</strong>:</p>
+<h3 id="桶式排序"><a href="#桶式排序" class="headerlink" title="桶式排序"></a>桶式排序</h3><p><strong>概念</strong>:</p>
 <ul>
 <li><strong>桶排序(Bucket sort)<strong>：桶排序是一个</strong>非比较排序方法</strong>，它的排序是<strong>典型的用空间换时间的方法</strong>，它的时间复杂度甚至可能是线性复杂度(<em>O(n)</em>)。如果我们有N个<strong>整数</strong>，数的大小范围为1<del>M(或者0</del>M-1),就可以根据数据大小范围创建一个空桶(可以看作数组)或者多个空桶，然后将数据分桶后，就可以将这些数据从头到尾输出，输出完就会发现数据已经排好序了！时间复杂度为<em>O(M+N)</em></li>
 </ul>
@@ -732,7 +732,7 @@
 <li>分完桶之后，排序的算法自行选择</li>
 <li>分桶规则，根据数据自定义映射规则。</li>
 </ul>
-<h5 id="计数排序"><a href="#计数排序" class="headerlink" title="计数排序"></a>计数排序</h5><p><strong>概念</strong>：</p>
+<h4 id="计数排序"><a href="#计数排序" class="headerlink" title="计数排序"></a>计数排序</h4><p><strong>概念</strong>：</p>
 <ul>
 <li>假设要排序的数据为N个整数，数的大小范围为0~M-1,我们就创建一个空桶(数组)，数组的长度为该数据的最大值(<strong>将每一个元素看作是数组的下标,例如元素1就放在数组a[1]中</strong>)，数组的值全部初始化为0，然后利用循环如果出现一个元素，就将其对应数组的下标中的数据+1(例如有数据中1出现了两次，则a[1]&#x3D;&#x3D;2)，然后再将根据排序方式将数组元素顺序&#x2F;逆序打印，对应数组下标的值为多少就打印几次。该排序方法时间复杂度为*O(n)*。</li>
 </ul>
@@ -751,7 +751,7 @@
 
 
 
-<h5 id="基数排序"><a href="#基数排序" class="headerlink" title="基数排序"></a>基数排序</h5><p><strong>概念</strong>：</p>
+<h4 id="基数排序"><a href="#基数排序" class="headerlink" title="基数排序"></a>基数排序</h4><p><strong>概念</strong>：</p>
 <ul>
 <li>当数据范围过大的时候，如果使用桶排序则需要创建的空桶太多了，因此我们使用<strong>多趟桶式排序</strong>—我们将会用<strong>最低(有效)位</strong>优先的方式进行桶式排序。</li>
 <li>首先我们得先<strong>创建一个0-9的桶(线性表)<strong>，我们将会将数据分趟次(根据数据最大数的位次)排序，第一次就以</strong>每个数据的最低位排序</strong>依次放到其最低位对应的桶中，例如：数据231就放在数组a[2]中，然后再根据<strong>次低位</strong>进行第二趟排序，如果只有一位数的数据就根据第一趟排序的顺序依次放在第0位的桶中，然后如果还有百位的数据则就继续第三趟排序。</li>
@@ -790,7 +790,7 @@
 
 
 
-<h3 id="图论算法"><a href="#图论算法" class="headerlink" title="图论算法"></a>图论算法</h3><h4 id="拓扑排序"><a href="#拓扑排序" class="headerlink" title="拓扑排序"></a>拓扑排序</h4><p><strong>概念</strong>：</p>
+<h2 id="图论算法"><a href="#图论算法" class="headerlink" title="图论算法"></a>图论算法</h2><h3 id="拓扑排序"><a href="#拓扑排序" class="headerlink" title="拓扑排序"></a>拓扑排序</h3><p><strong>概念</strong>：</p>
 <ul>
 <li>拓扑排序是对有向无圈图的顶点的一种排序。排序不必是唯一的，任何合理的排序都是可以的。</li>
 <li>具体做法是：先<strong>找出任意一个没有入边的顶点v</strong>(就是没有其他顶点指向的顶点)，<strong>将顶点v放入队列</strong>，然后<strong>将顶点v和它邻接的边从图中删除</strong>(其实就是将顶点v指向的顶点的入边数都-1，这样就可以代表删除边了)，然后<strong>用数组topnum来记录该顶点的排序位置</strong>。然后<strong>重复上述操作</strong>。顶点v的<strong>入度(indegree)为边(u,v)的条数</strong>。并<strong>用indegree数组来存储每个顶点的入度值</strong>。如果<strong>不存在入度为0的顶点，则该图是个有圈图。</strong></li>
@@ -812,7 +812,7 @@
 
 
 
-<h4 id="最短路径算法"><a href="#最短路径算法" class="headerlink" title="最短路径算法"></a>最短路径算法</h4><p><strong>概念</strong>：</p>
+<h3 id="最短路径算法"><a href="#最短路径算法" class="headerlink" title="最短路径算法"></a>最短路径算法</h3><p><strong>概念</strong>：</p>
 <ul>
 <li><p>考查最短路径问题，可能会输入一个<strong>赋权图(也就是边带有权的图)<strong>，则一条路径的</strong>v1v2..vN的值就是对路径的边的权求和</strong>，这叫做<strong>赋权路径长</strong>，如果是<strong>无权路径长就是单纯的路径上的边数</strong>。</p>
 </li>
@@ -827,7 +827,7 @@
 <ul>
 <li>给定一个无权图G&#x3D;(V,E)和一个起始顶点s作为输入，找出从s到G中每一个其他顶点的最短路径。</li>
 </ul>
-<h5 id="广度优先搜索算法-BFS"><a href="#广度优先搜索算法-BFS" class="headerlink" title="广度优先搜索算法(BFS)"></a>广度优先搜索算法(BFS)</h5><p><strong>概念</strong>：</p>
+<h4 id="广度优先搜索算法-BFS"><a href="#广度优先搜索算法-BFS" class="headerlink" title="广度优先搜索算法(BFS)"></a>广度优先搜索算法(BFS)</h4><p><strong>概念</strong>：</p>
 <ul>
 <li><strong>广度优先搜索算法(BFS)<strong>用于在</strong>无权图或者边权相同的图中寻找最短路径。</strong></li>
 <li>该方法<strong>按层处理顶点</strong>，首先<strong>从起始点出发</strong>，进行<strong>发散找到与起始点邻接的顶点a,…<strong>，并</strong>将s到这些顶点的路径距离更新</strong>，然后<strong>将该点标记成已经访问的顶点并将该点的前一个顶点记录下来(被标记的顶点我们后面遇到就认为该点已经不需要再进行处理了)<strong>，然后</strong>再从顶点a,…发散</strong>，找<strong>到该顶点的邻接顶点，然后重复操作</strong>，<strong>直到所有顶点都被标记完</strong>，就完成了搜索。</li>
@@ -845,7 +845,7 @@
 
 
 
-<h5 id="Dijkstra算法"><a href="#Dijkstra算法" class="headerlink" title="Dijkstra算法"></a>Dijkstra算法</h5><p><strong>概念</strong>：</p>
+<h4 id="Dijkstra算法"><a href="#Dijkstra算法" class="headerlink" title="Dijkstra算法"></a>Dijkstra算法</h4><p><strong>概念</strong>：</p>
 <ul>
 <li>用于<strong>求解赋权图的最短路径(无负值边)<strong>，Dijkstra算法是</strong>解决单源最短路径问题的一般方法，</strong>并且该<strong>解法是贪心算法</strong>。Dijkstra只是BFS的升级版使他能够求赋权图的最短路径，如果求无权图Dijkstra跟BFS的做法一样！</li>
 <li>Dijkstra算法是<strong>分阶段</strong>的，该算法认为<strong>每一个阶段，都将该阶段当作最好的情况处理</strong>，类似于BFS算法，但是还是有不同的地方，比起BFS多出了需要进行每个阶段出现最好情况就进行更新路径。</li>
@@ -919,7 +919,7 @@
 
 
 
-<h5 id="Floyd算法"><a href="#Floyd算法" class="headerlink" title="Floyd算法"></a>Floyd算法</h5><p><strong>概念</strong>：</p>
+<h4 id="Floyd算法"><a href="#Floyd算法" class="headerlink" title="Floyd算法"></a>Floyd算法</h4><p><strong>概念</strong>：</p>
 <ul>
 <li>Floyd(弗洛伊德)算法是<strong>基于动态规划思想</strong>的算法，也称<strong>插点法</strong>，是<strong>全源最短路算法</strong>(全源就代表经过一次Floyd算法，每个点到各个点的最短路径都能算出来)</li>
 <li>用于求任意一对顶点间的最短路径，此时图中的<strong>边的权值可以出现负数，但不能出现负环</strong></li>
@@ -984,13 +984,13 @@
 
 
 
-<h4 id="最小生成树"><a href="#最小生成树" class="headerlink" title="最小生成树"></a>最小生成树</h4><p><strong>概念</strong>：</p>
+<h3 id="最小生成树"><a href="#最小生成树" class="headerlink" title="最小生成树"></a>最小生成树</h3><p><strong>概念</strong>：</p>
 <ul>
 <li><strong>最小生成树</strong>是一颗<strong>连接图G所有顶点的边构成的一颗权最小的树</strong>，<strong>最小生成树一般是在无向图中寻找。</strong></li>
 <li>最小生成树**共有N-1条边(N为顶点数)**。</li>
 </ul>
 <p><strong>算法</strong>：</p>
-<h5 id="Prim算法"><a href="#Prim算法" class="headerlink" title="Prim算法"></a>Prim算法</h5><p><strong>概念</strong>：</p>
+<h4 id="Prim算法"><a href="#Prim算法" class="headerlink" title="Prim算法"></a>Prim算法</h4><p><strong>概念</strong>：</p>
 <ul>
 <li>Prim(普里姆)算法是生成最小生成树的一种算法，该算法基本上和求最短路径的Dijkstra算法一样</li>
 <li>具体操作：<strong>选取一个顶点作为树的根节点v1</strong>，然后<strong>从这个顶点发散</strong>，找到其<strong>邻接顶点(加入队列中)<strong>，然后</strong>选取根节点到邻接顶点中权最小的路径</strong>(也就是连接该路径的另一个顶点)进行<strong>添加到树中(也将连接的顶点除去v1的顶点的邻接顶点加入队列中)<strong>，然后初步</strong>形成一个图为u</strong>，然后再<strong>按顺序的查找图u与队列中的顶点的最小路径并加入树中</strong>，重复操作。</li>
@@ -1021,12 +1021,12 @@
 
 
 
-<h5 id="Kruskal算法"><a href="#Kruskal算法" class="headerlink" title="Kruskal算法"></a>Kruskal算法</h5><p><strong>概念</strong>：</p>
+<h4 id="Kruskal算法"><a href="#Kruskal算法" class="headerlink" title="Kruskal算法"></a>Kruskal算法</h4><p><strong>概念</strong>：</p>
 <ul>
 <li>Kruskal(克鲁斯卡尔)算法是连续地按照最小的权选择边，并且当所选的边不产生圈时就把它作为最小生成树中的边。</li>
 <li>该算法是在处理一个森林–树的集合。开始的时候，存在|V|棵单节点树，而添加一边则将两棵树合并成一颗树。当算法终止时，就只有一棵树，就是最小生成树。</li>
 </ul>
-<h6 id="并查集"><a href="#并查集" class="headerlink" title="并查集"></a>并查集</h6><ul>
+<h5 id="并查集"><a href="#并查集" class="headerlink" title="并查集"></a>并查集</h5><ul>
 <li><p>并：合并，查：查询连通关系，集：形成集合，<strong>用于处理连通性问题</strong>。</p>
 </li>
 <li><p>并查集：<strong>集合中的元素组织成树的形式</strong>：</p>
@@ -1066,7 +1066,7 @@
 
 
 
-<h4 id="深度优先算法-DFS"><a href="#深度优先算法-DFS" class="headerlink" title="深度优先算法(DFS)"></a>深度优先算法(DFS)</h4><p><strong>概念</strong>：</p>
+<h3 id="深度优先算法-DFS"><a href="#深度优先算法-DFS" class="headerlink" title="深度优先算法(DFS)"></a>深度优先算法(DFS)</h3><p><strong>概念</strong>：</p>
 <ul>
 <li><p>深度优先算法(DFS)跟BFS算法一样是<strong>用于遍历图的算法</strong>，但是DFS并不像BFS算法一样，它搜索出来的路径<strong>不具有最短性</strong>，并且dfs算法<strong>类似于枚举</strong>，因此**DFS算法一般用于求出问题的所有路径(例如全排列)**。</p>
 </li>
@@ -1120,7 +1120,7 @@
 
 
 
-<h4 id="双连通性"><a href="#双连通性" class="headerlink" title="双连通性"></a>双连通性</h4><p><strong>概念</strong>：</p>
+<h3 id="双连通性"><a href="#双连通性" class="headerlink" title="双连通性"></a>双连通性</h3><p><strong>概念</strong>：</p>
 <ul>
 <li>双连通性就是当<strong>删除图中的一个顶点</strong>，使<strong>图分割成两个图</strong>，则<strong>这个图就具有双连通性</strong>，而<strong>能导致图分割成多张图的顶点称为割点</strong></li>
 <li><strong>背向边</strong>：当<strong>一个顶点被访问</strong>时，选<strong>取该顶点其中一个未访问过的邻接顶点进行访问</strong>，<strong>没被选取到的邻接顶点与当前顶点形成的边称为背向边</strong></li>
@@ -1165,7 +1165,7 @@
 
 
 
-<h3 id="图论技巧"><a href="#图论技巧" class="headerlink" title="图论技巧"></a>图论技巧</h3><h4 id="超级源点-汇点"><a href="#超级源点-汇点" class="headerlink" title="超级源点&#x2F;汇点"></a>超级源点&#x2F;汇点</h4><p><strong>概念</strong>：</p>
+<h2 id="图论技巧"><a href="#图论技巧" class="headerlink" title="图论技巧"></a>图论技巧</h2><h3 id="超级源点-汇点"><a href="#超级源点-汇点" class="headerlink" title="超级源点&#x2F;汇点"></a>超级源点&#x2F;汇点</h3><p><strong>概念</strong>：</p>
 <ul>
 <li><p><code>超级源点/汇点</code>是模拟出来的虚拟点，多用于图中：</p>
 <blockquote>
@@ -1206,12 +1206,12 @@
 
 
 
-<h3 id="贪心算法"><a href="#贪心算法" class="headerlink" title="贪心算法"></a>贪心算法</h3><p><strong>概念</strong>：</p>
+<h2 id="贪心算法"><a href="#贪心算法" class="headerlink" title="贪心算法"></a>贪心算法</h2><p><strong>概念</strong>：</p>
 <ul>
 <li><strong>贪心算法是一种思想</strong>，并不是一种算法，贪心算法是<strong>分阶段地工作，在每一个阶段，可以认为所作决定是好的，而不考虑将来地后果。</strong></li>
 <li>算法的<strong>每个阶段总是选择当前阶段最优</strong>，这种策略<strong>希望当算法终止时，能够将每一次的局部最优变成全局最优。</strong></li>
 </ul>
-<h4 id="调度问题"><a href="#调度问题" class="headerlink" title="调度问题"></a>调度问题</h4><p><strong>概念</strong>：</p>
+<h3 id="调度问题"><a href="#调度问题" class="headerlink" title="调度问题"></a>调度问题</h3><p><strong>概念</strong>：</p>
 <ul>
 <li><strong>调度问题</strong>就是<strong>安排一个完成任务的顺序使得全部任务完成的平均完成的时间能够最小化</strong>。</li>
 </ul>
@@ -1227,7 +1227,7 @@
 <li>假设我们有<strong>p个处理器</strong>，则我们<strong>选择前p个任务分配给各个处理器各一个</strong>，然后<strong>第p+1任务分配给第一个处理器</strong>，然后<strong>后面的就是按照这个规则分配。</strong></li>
 <li>第二个最优解，是将<strong>任务分组分配给各个处理器</strong>，且<strong>任务个数能整除处理器个数</strong>，是<strong>对于0&lt;&#x3D;i&lt;N&#x2F;p</strong>，p为处理器个数，N为任务总数，i为处理器序号，我们<strong>从任务i*p+1直到任务(i+1)*p的每个任务放到编号为i的处理器中。</strong></li>
 </ul>
-<h4 id="Huffman编码"><a href="#Huffman编码" class="headerlink" title="Huffman编码"></a>Huffman编码</h4><p><strong>概念</strong>：</p>
+<h3 id="Huffman编码"><a href="#Huffman编码" class="headerlink" title="Huffman编码"></a>Huffman编码</h3><p><strong>概念</strong>：</p>
 <ul>
 <li>哈夫曼(Huffman)编码是<strong>一种压缩文件的编码</strong>，根据<strong>文件出现的字符使用一种将数据存在树叶上的二叉树来表示每个字符的二进制代码</strong>。</li>
 <li><strong>每个字符通过从根节点开始用0指示左分支用1表示右分支而以记录路径的方法表示出来</strong>。如果字符c<sub>i</sub>在深度d<sub>i</sub>处并且出现f<sub>i</sub>次，那么该字符代码的值为对d<sub>i</sub>f<sub>i</sub>的求和。</li>
@@ -1264,12 +1264,12 @@
 
 
 
-<h3 id="分治算法"><a href="#分治算法" class="headerlink" title="分治算法"></a>分治算法</h3><p><strong>概念</strong>：</p>
+<h2 id="分治算法"><a href="#分治算法" class="headerlink" title="分治算法"></a>分治算法</h2><p><strong>概念</strong>：</p>
 <ul>
 <li><strong>分治算法</strong>也是一种<strong>思想策略</strong>，分治算法就是<strong>将大问题不断地分成小问题解决后再重新构建原问题地解</strong>。一般地分治算法的时间复杂度为<em>O(NlogN)</em></li>
 <li><strong>分</strong>：<strong>递归</strong>解决较小的问题；<strong>治</strong>：然后，<strong>从子问题的解构建原问题的解</strong>。分治算法中我们一直<strong>坚持子问题是不相交的(即基本不重叠)</strong></li>
 </ul>
-<h4 id="最近点问题"><a href="#最近点问题" class="headerlink" title="最近点问题"></a>最近点问题</h4><p><strong>概念</strong>:</p>
+<h3 id="最近点问题"><a href="#最近点问题" class="headerlink" title="最近点问题"></a>最近点问题</h3><p><strong>概念</strong>:</p>
 <ul>
 <li>对于平面内存在一个点集P，找到点集P中的最小距离的点对(两个点的距离在点集中所有点产生的距离中最短)。</li>
 <li>如果按照简单地方法解决就需要嵌套循环导致时间复杂度为O(N²)，但是这个时间复杂度太大了，因此我们就是用到分治</li>
@@ -1286,7 +1286,7 @@
 <li><p><strong>d<sub>c</sub>的求法</strong>：<strong>令 δ&#x3D;min(d<sub>L</sub>，d<sub>R</sub>)<strong>，如果</strong>出现d<sub>c</sub>更小的情况</strong>，则<strong>d<sub>c</sub>的两个点必然在分割线的左右各δ的距离之内</strong>，我们将<strong>这个区域叫做一条带</strong>。我们<strong>将</strong>在<strong>带的区域内的点按照y轴排序</strong>，如果<strong>两个点的y轴坐标相差大于δ，则d<sub>c</sub>&gt;δ</strong>，因此<strong>就可以不进行判断直接跳过，处理下一对点对</strong>。伪代码如下：</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-comment">//先将带区域内的点按照y轴排序</span><br><span class="hljs-comment">//NumPoint为带区域的点集的点个数</span><br><span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>;i&lt;NumPoint;i++)&#123;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> j=i+<span class="hljs-number">1</span>;j&lt;Numpoint;j++)&#123;<br>        <span class="hljs-comment">//判断点对的y轴距离是否大于δ</span><br>        <span class="hljs-keyword">if</span>(<span class="hljs-built_in">diff</span>(pi.y,pj.y)&gt;δ)&#123;<br>            <span class="hljs-keyword">break</span>;<br>        &#125;<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(<span class="hljs-built_in">diff</span>(pi,pj)&lt;δ)&#123;    <span class="hljs-comment">//判断pi到pj的距离是否小于δ</span><br>            δ=<span class="hljs-built_in">diff</span>(pi,pj);<br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure></li>
 </ul>
-<h4 id="选择问题"><a href="#选择问题" class="headerlink" title="选择问题"></a>选择问题</h4><p><strong>概念</strong>：</p>
+<h3 id="选择问题"><a href="#选择问题" class="headerlink" title="选择问题"></a>选择问题</h3><p><strong>概念</strong>：</p>
 <ul>
 <li><strong>选择问题要求我们找出含N个元素的表S中的第k个最小的元素</strong>。</li>
 <li>该问题的解法虽然使用了分治算法的策略，但是他在分之后只需要求解一个子问题，也不需要合并子问题求解，换句话来说，这个问题就是将大问题不断地分找到属于这个问题地解。</li>
@@ -1308,7 +1308,7 @@
 <li><strong>找出每组的中项(中间值)<strong>，</strong>得到向下取整(N&#x2F;5)个中项的表M</strong></li>
 <li><strong>求出M的中项，将其作为枢纽元v返回</strong></li>
 </ul>
-<h3 id="字符串匹配算法"><a href="#字符串匹配算法" class="headerlink" title="字符串匹配算法"></a>字符串匹配算法</h3><h4 id="KMP算法"><a href="#KMP算法" class="headerlink" title="KMP算法"></a>KMP算法</h4><p><strong>概念</strong>：</p>
+<h2 id="字符串匹配算法"><a href="#字符串匹配算法" class="headerlink" title="字符串匹配算法"></a>字符串匹配算法</h2><h3 id="KMP算法"><a href="#KMP算法" class="headerlink" title="KMP算法"></a>KMP算法</h3><p><strong>概念</strong>：</p>
 <ul>
 <li><strong>KMP算法</strong>是用于解决字符串匹配的问题的算法，也就是有<strong>一个文本串和一个模式串</strong>，<strong>求解这个模式串是否在文本串中出现或者匹配</strong>。</li>
 <li>相对于暴力求解，KMP算法<strong>使用了前缀表来进行匹配</strong>，充分利用了之前匹配的字符，减少了重新匹配全部模式串的时间。</li>
@@ -1374,13 +1374,13 @@
 
 
 
-<h3 id="最近公共祖先-LCA"><a href="#最近公共祖先-LCA" class="headerlink" title="最近公共祖先(LCA)"></a>最近公共祖先(LCA)</h3><p><strong>概念</strong>：</p>
+<h2 id="最近公共祖先-LCA"><a href="#最近公共祖先-LCA" class="headerlink" title="最近公共祖先(LCA)"></a>最近公共祖先(LCA)</h2><p><strong>概念</strong>：</p>
 <ul>
 <li><strong>祖先节点</strong>：给定一棵多叉树，对于其中任意非根节点x，我们称从x的父节点到根节点的路径上的所有点为x的祖先节点</li>
 <li><strong>公共祖先</strong>：如果节点a同时是节点b和c的祖先，称a是b和c的公共祖先</li>
 <li><code>最近公共祖先LCA</code>:对于树上任意两点x和y，<strong>距离它们最近的公共祖先的节点</strong>就称为x和y的最近公共祖先(简称LCA)</li>
 </ul>
-<h4 id="朴素求解-暴力"><a href="#朴素求解-暴力" class="headerlink" title="朴素求解(暴力)"></a>朴素求解(暴力)</h4><p><strong>原理</strong>：我们<strong>只需要将x和y节点都升到同一深度或同一层</strong>，并<strong>让x和y同时向上走，直到x和y相等时</strong>，当前的<strong>x或y就是原先x和y节点的最近公共祖先</strong></p>
+<h3 id="朴素求解-暴力"><a href="#朴素求解-暴力" class="headerlink" title="朴素求解(暴力)"></a>朴素求解(暴力)</h3><p><strong>原理</strong>：我们<strong>只需要将x和y节点都升到同一深度或同一层</strong>，并<strong>让x和y同时向上走，直到x和y相等时</strong>，当前的<strong>x或y就是原先x和y节点的最近公共祖先</strong></p>
 <p><strong>时间复杂度</strong>：最坏情况下，<strong>n为树上节点数，q为查询次数</strong>，则朴素求解的lca时间复杂度为<code>O(q*n)</code></p>
 <p><strong>做法</strong>：</p>
 <ol>
@@ -1417,7 +1417,7 @@
 
 
 
-<h4 id="在线倍增算法"><a href="#在线倍增算法" class="headerlink" title="在线倍增算法"></a>在线倍增算法</h4><p><strong>原理</strong>：</p>
+<h3 id="在线倍增算法"><a href="#在线倍增算法" class="headerlink" title="在线倍增算法"></a>在线倍增算法</h3><p><strong>原理</strong>：</p>
 <ul>
 <li>跟朴素求解一样的，我<strong>们也是需要将x和y置于同一深度</strong>，但是我们不再是简单的一个个去上升，而是利用倍增的思想，<strong>每次以2<sup>i</sup>(i∈[0,log2(dep[x]-dep[y])])的递增上升</strong></li>
 <li>同样的<strong>当x和y在同一深度上升时，也是利用倍增的递增上升，每次以2<sup>i</sup>(i∈[0,log2(dep[x])])的跨度递增，直到x和y相等</strong></li>
@@ -1486,7 +1486,7 @@
 
 
 
-<h3 id="动态规划-dp"><a href="#动态规划-dp" class="headerlink" title="动态规划(dp)"></a>动态规划(dp)</h3><p><strong>概念</strong>：</p>
+<h2 id="动态规划-dp"><a href="#动态规划-dp" class="headerlink" title="动态规划(dp)"></a>动态规划(dp)</h2><p><strong>概念</strong>：</p>
 <ul>
 <li>将<strong>递归算法重新写成非递归算法</strong>，让后者把<strong>那些子问题的答案系统地记录在一个表(dp数组)内</strong>，这种方法叫做<strong>动态规划</strong></li>
 <li>通常用于<strong>求解具有最优性质的问题</strong>(最优子结构&amp;最优子问题)，希望找到具有最优值的解。</li>
@@ -1628,7 +1628,7 @@
 
 
 
-<h3 id="记忆化搜索"><a href="#记忆化搜索" class="headerlink" title="记忆化搜索"></a>记忆化搜索</h3><p><strong>概念</strong>：</p>
+<h2 id="记忆化搜索"><a href="#记忆化搜索" class="headerlink" title="记忆化搜索"></a>记忆化搜索</h2><p><strong>概念</strong>：</p>
 <ul>
 <li>记忆化搜索就是深度优先搜索的一种优化策略，<code>记忆化搜索=深度优先搜索形式+动态规划思想</code></li>
 <li>由于dfs本质是暴力搜索，没有很好地处理重叠子问题，因此很低效</li>
@@ -1673,7 +1673,7 @@
 <p><img src="https://cdn.jsdelivr.net/gh/MoonforDream/photohouse/hexo/202405191529596.png" srcset="/img/loading.gif" lazyload alt="image"></p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><br><span class="hljs-type">int</span> mp[<span class="hljs-number">105</span>][<span class="hljs-number">105</span>], n, m,dp[<span class="hljs-number">105</span>][<span class="hljs-number">105</span>];<br><span class="hljs-type">int</span> dx[] = &#123;<span class="hljs-number">1</span>, <span class="hljs-number">-1</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>&#125;, dy[] = &#123;<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">-1</span>&#125;;<br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">dfs</span><span class="hljs-params">(<span class="hljs-type">int</span> x,<span class="hljs-type">int</span> y)</span></span>&#123;<br>    <span class="hljs-keyword">if</span>(dp[x][y]!=<span class="hljs-number">-1</span>) <span class="hljs-keyword">return</span> dp[x][y];<br>    dp[x][y]=<span class="hljs-number">1</span>;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>;i&lt;<span class="hljs-number">4</span>;++i)&#123;<br>        <span class="hljs-type">int</span> px=x+dx[i];<br>        <span class="hljs-type">int</span> py=y+dy[i];<br>        <span class="hljs-keyword">if</span>(px&gt;=<span class="hljs-number">0</span>&amp;&amp;py&gt;=<span class="hljs-number">0</span>&amp;&amp;px&lt;n&amp;&amp;py&lt;m&amp;&amp;mp[px][py]&lt;mp[x][y])&#123;<br>            dp[x][y]=<span class="hljs-built_in">max</span>(dp[x][y],<span class="hljs-built_in">dfs</span>(px,py)+<span class="hljs-number">1</span>);<br>        &#125;<br>    &#125;<br>    <span class="hljs-keyword">return</span> dp[x][y];<br>&#125;<br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>;i&lt;n;++i)&#123;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> j=<span class="hljs-number">0</span>;j&lt;m;++j)&#123;<br>            cin&gt;&gt;mp[i][j];<br>            dp[i][j]=<span class="hljs-number">-1</span>;<br>        &#125;<br>    &#125;<br>    <span class="hljs-type">int</span> cnt=<span class="hljs-number">1</span>;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>;i&lt;n;++i)&#123;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> j=<span class="hljs-number">0</span>;j&lt;m;++j)&#123;<br>            cnt=<span class="hljs-built_in">max</span>(cnt,<span class="hljs-built_in">dfs</span>(i,j));<br>        &#125;<br>    &#125;<br>    cout&lt;&lt;cnt&lt;&lt;endl;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure></li>
 </ul>
-<h3 id="数位dp"><a href="#数位dp" class="headerlink" title="数位dp"></a>数位dp</h3><p><strong>概念</strong>：</p>
+<h2 id="数位dp"><a href="#数位dp" class="headerlink" title="数位dp"></a>数位dp</h2><p><strong>概念</strong>：</p>
 <ul>
 <li><code>数位dp</code>是一种计数用的dp，一般是要<strong>统计一个区级[l,r]内满足一些条件的数的个数</strong></li>
 <li>所谓数位dp，就是<strong>对数位进行dp，也就是个位、十位等</strong></li>
@@ -1759,7 +1759,7 @@
 
 
 
-<h3 id="ST表"><a href="#ST表" class="headerlink" title="ST表"></a>ST表</h3><p><strong>概念</strong>：</p>
+<h2 id="ST表"><a href="#ST表" class="headerlink" title="ST表"></a>ST表</h2><p><strong>概念</strong>：</p>
 <ul>
 <li>ST表<strong>适用于解决区间最值的问题(RMQ问题)的数据结构</strong></li>
 <li>ST表<strong>本质是dp算法</strong>，只不过dp是对数组一排一排更新，而RMQ是对数组一列一列动态规划的</li>
@@ -1820,7 +1820,7 @@
 
 
 
-<h3 id="单调栈"><a href="#单调栈" class="headerlink" title="单调栈"></a>单调栈</h3><p><strong>概念</strong>：</p>
+<h2 id="单调栈"><a href="#单调栈" class="headerlink" title="单调栈"></a>单调栈</h2><p><strong>概念</strong>：</p>
 <ul>
 <li>单调栈是一种数据结构，但是因为经常使用就将其放入算法</li>
 <li>单调栈就是<strong>栈内的元素呈单调递增或者单调递减的(一般指栈顶到栈底)</strong></li>
@@ -1905,7 +1905,7 @@
 <li><p><code>单调递减栈</code></p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<br>    stack&lt;<span class="hljs-type">int</span>&gt;st;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>;i&lt;nums.<span class="hljs-built_in">size</span>();++i)&#123;<br>        <span class="hljs-keyword">while</span>(!st.<span class="hljs-built_in">empty</span>()&amp;&amp;nums[i]&lt;nums[st.<span class="hljs-built_in">top</span>()])&#123;<br>            st.<span class="hljs-built_in">pop</span>();<br>        &#125;<br>        st.<span class="hljs-built_in">push</span>(i);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure></li>
 </ol>
-<h3 id="滑动窗口"><a href="#滑动窗口" class="headerlink" title="滑动窗口"></a>滑动窗口</h3><p><strong>概念</strong>：</p>
+<h2 id="滑动窗口"><a href="#滑动窗口" class="headerlink" title="滑动窗口"></a>滑动窗口</h2><p><strong>概念</strong>：</p>
 <ul>
 <li><p>滑动窗口算法是由双指针来维护窗口进行滑动的算法</p>
 </li>
@@ -1987,7 +1987,7 @@
 
 
 
-<h3 id="回溯算法"><a href="#回溯算法" class="headerlink" title="回溯算法"></a>回溯算法</h3><p><strong>概念</strong>:</p>
+<h2 id="回溯算法"><a href="#回溯算法" class="headerlink" title="回溯算法"></a>回溯算法</h2><p><strong>概念</strong>:</p>
 <ul>
 <li><p><strong>回溯算法</strong>是一种<strong>进行选择搜索然后再回退到选择点选择其他路径然后形成一个决策树的算法</strong>，例如在一个空间摆放家具就需要进行选择不同的家具然后看效果，如果选择其中一个家具的效果不好，则就回退到选择点选择除选择过以外的家具，如果客户认可就沿着这个路径继续搜索，然后达到一个穷举的效果。</p>
 </li>
@@ -2045,15 +2045,15 @@
 
 
 
-<h2 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h2><h3 id="抽象数据类型"><a href="#抽象数据类型" class="headerlink" title="抽象数据类型"></a>抽象数据类型</h3><p><strong>概念</strong>：</p>
+<h1 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h1><h2 id="抽象数据类型"><a href="#抽象数据类型" class="headerlink" title="抽象数据类型"></a>抽象数据类型</h2><p><strong>概念</strong>：</p>
 <ul>
 <li>抽象数据类型(abstract data type,ADT)是一些操作的集合。抽象数据类型是数学的抽象，只是描述ADT有啥功能，但是在ADT定义中根本没涉及到如何实现功能，这可以看作是模块化设计的补充，对于诸如表，集合、图和他们的操作一起看作是抽象数据类型，就像整数、实数和布尔量是数据类型一样.例如集合ADT，我们可以有诸如并、交、测定大小以及取余等操作。</li>
 </ul>
-<h3 id="线性表"><a href="#线性表" class="headerlink" title="线性表"></a>线性表</h3><p><strong>定义</strong>：</p>
+<h2 id="线性表"><a href="#线性表" class="headerlink" title="线性表"></a>线性表</h2><p><strong>定义</strong>：</p>
 <ul>
 <li>我们将处理一般的形如A1,A2,A3….AN的表成为<strong>线性表</strong>，N为表的大小，我们称N&#x3D;0的表为空表。对于除空表外的任何表，我们说A<sub>i+1</sub>后继A<sub>i</sub>并称A<sub>i-1</sub>前驱A<sub>i</sub>,表中的第一个元素为A<sub>1</sub>,而最后一个元素为A<sub>N</sub>.</li>
 </ul>
-<h4 id="简单数组实现表"><a href="#简单数组实现表" class="headerlink" title="简单数组实现表"></a>简单数组实现表</h4><p><strong>概念</strong>：</p>
+<h3 id="简单数组实现表"><a href="#简单数组实现表" class="headerlink" title="简单数组实现表"></a>简单数组实现表</h3><p><strong>概念</strong>：</p>
 <ul>
 <li>表的实现可以通过数组进行实现，而表的插入和删除，就需要对数组元素进行移动，例如插入，如果向第一个位置插入，我们就需要数组元素都向后移动一位，又如删除第一个元素，就需要将第一个元素删掉，数组元素再向前移动一位。</li>
 </ul>
@@ -2067,7 +2067,7 @@
 
 
 
-<h4 id="链表"><a href="#链表" class="headerlink" title="链表"></a>链表</h4><p><strong>与简单数组实现的优缺点</strong>：</p>
+<h3 id="链表"><a href="#链表" class="headerlink" title="链表"></a>链表</h3><p><strong>与简单数组实现的优缺点</strong>：</p>
 <ul>
 <li><strong>优点</strong>：简单数组实现表的插入和删除需要花费大量的时间，尤其当数据量大的时候，则程序的耗时将会难以接受，因此为了避免插入和删除的线性开销，我们需要允许表可以不连续存储，否咋表的部分或全部需要整体移动，因此我们将用<strong>链表</strong>进行实现</li>
 <li><strong>缺点</strong>：在查找数据的时候，链表所耗的时长更多，因为数组可以直接用索引来获取，但是链表需要遍历表连接的数据，直到找到数据为止。</li>
@@ -2084,7 +2084,7 @@
 
 
 
-<h4 id="双向非循环链表"><a href="#双向非循环链表" class="headerlink" title="双向非循环链表"></a>双向非循环链表</h4><p><strong>作用</strong>：</p>
+<h3 id="双向非循环链表"><a href="#双向非循环链表" class="headerlink" title="双向非循环链表"></a>双向非循环链表</h3><p><strong>作用</strong>：</p>
 <ul>
 <li><strong>有时候以倒序扫描链表更方便</strong>，但是为了实现这个就会多出一条附加链的开销，他<strong>增加了空间的需求</strong>，同时使得插入和删除的开销增加一倍，但是<strong>又简化了删除操作</strong>。</li>
 </ul>
@@ -2104,7 +2104,7 @@
 
 
 
-<h4 id="循环链表"><a href="#循环链表" class="headerlink" title="循环链表"></a>循环链表</h4><p><strong>概念</strong>：</p>
+<h3 id="循环链表"><a href="#循环链表" class="headerlink" title="循环链表"></a>循环链表</h3><p><strong>概念</strong>：</p>
 <ul>
 <li><strong>循环链表</strong>就是没有表头表尾的链表，例如一般的链表的表尾为NULL,但是循环链表的下一个指向的表头，不仅有<strong>单向循环链表</strong>，而且还有<strong>双向循环链表</strong>，双向循环链表就是表头的前一个指向表尾，表尾的下一个指向表头。</li>
 <li><em>C++中的STL库中就已经封装了双向循环链表的类(list)</em></li>
@@ -2129,7 +2129,7 @@
 
 
 
-<h4 id="跳跃表-跳表"><a href="#跳跃表-跳表" class="headerlink" title="跳跃表(跳表)"></a>跳跃表(跳表)</h4><p><strong>概念</strong>：</p>
+<h3 id="跳跃表-跳表"><a href="#跳跃表-跳表" class="headerlink" title="跳跃表(跳表)"></a>跳跃表(跳表)</h3><p><strong>概念</strong>：</p>
 <ul>
 <li><strong>跳跃表是一个随机化的数据结构</strong>，实质就是一种<strong>可以进行二分查找的有序链表</strong>。</li>
 <li>跳表在<strong>原有的有序链表的基础上面通过随机化算法产生随机级数的节点使其通过节点的索引来实现快速查找</strong>，<strong>提高了插入，删除，查找操作的性能</strong></li>
@@ -2191,7 +2191,7 @@
 
 
 
-<h3 id="栈-stack"><a href="#栈-stack" class="headerlink" title="栈(stack)"></a>栈(stack)</h3><h4 id="概念"><a href="#概念" class="headerlink" title="概念"></a><strong>概念</strong></h4><ul>
+<h2 id="栈-stack"><a href="#栈-stack" class="headerlink" title="栈(stack)"></a>栈(stack)</h2><h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a><strong>概念</strong></h3><ul>
 <li><strong>栈(stack)<strong>是限制插入和删除只能在一个位置上的进行的表，而这个模型唯一的开口位置是表的</strong>末端</strong>，叫做<strong>栈顶(top)<strong>，相反表的首部，叫做</strong>栈底</strong>。对于栈的基本操作有**Push(进栈)<strong>和</strong>Pop(出栈)**，前者相当于插入，后者则是删除表中最后一个元素(也就是处在栈顶位置的元素)。</li>
 <li><em>栈是一个先进后出的模型</em></li>
 </ul>
@@ -2233,7 +2233,7 @@
 
 
 
-<h4 id="逆波兰转换式"><a href="#逆波兰转换式" class="headerlink" title="逆波兰转换式"></a>逆波兰转换式</h4><p><strong>概念</strong>：</p>
+<h3 id="逆波兰转换式"><a href="#逆波兰转换式" class="headerlink" title="逆波兰转换式"></a>逆波兰转换式</h3><p><strong>概念</strong>：</p>
 <ul>
 <li><p>一种<strong>后缀表达式</strong>，例如a+b+c*d，转换成逆波兰表达式就为：a b + c d * +，然后我们将逆波兰表达式压入栈中(<em>将元素压入栈中遇到运算符号就将栈中的两个元素进行出栈在进行运算，运算完后再压入栈中，重复操作就能得到逆波兰表达式的结果</em>)，逆波兰表达式中没有括号！</p>
 </li>
@@ -2259,7 +2259,7 @@
 
 
 
-<h3 id="队列-queue"><a href="#队列-queue" class="headerlink" title="队列(queue)"></a>队列(queue)</h3><p><strong>概念</strong>：</p>
+<h2 id="队列-queue"><a href="#队列-queue" class="headerlink" title="队列(queue)"></a>队列(queue)</h2><p><strong>概念</strong>：</p>
 <ul>
 <li><strong>队列</strong>也是一种线性表，使用队列时插入在一端进行而删除则在另一端进行，队列的基本操作是<strong>入队</strong>，它是在<strong>表的末端</strong>(也叫做<strong>队尾</strong>)插入一个元素，<strong>出队</strong>，它是删除在**表的开头(**<strong>队头</strong>)的元素。</li>
 </ul>
@@ -2288,7 +2288,7 @@
 
 
 
-<h3 id="树"><a href="#树" class="headerlink" title="树"></a>树</h3><h4 id="普通树-多叉树"><a href="#普通树-多叉树" class="headerlink" title="普通树(多叉树)"></a>普通树(多叉树)</h4><p><strong>概念</strong>：</p>
+<h2 id="树"><a href="#树" class="headerlink" title="树"></a>树</h2><h3 id="普通树-多叉树"><a href="#普通树-多叉树" class="headerlink" title="普通树(多叉树)"></a>普通树(多叉树)</h3><p><strong>概念</strong>：</p>
 <ul>
 <li><strong>树</strong>就是由<strong>根节点(父亲)<strong>分出多个</strong>分支节点(儿子)<strong>，然后分支又分出多个分支，我们将这种结构称为树,树也可以这么定义：一棵树由称作</strong>根的节点r以及0个或多个非空的(子)树T1，T2，T3…Tk组成</strong>，这些子树每一棵的根都被来自<strong>根r的一条有向的边所连接</strong>。</li>
 <li><strong>从递归定义中我们发现</strong>，一颗树是<strong>N个节点</strong>和<strong>N-1条边</strong>的集合，其中的一个节点叫做<strong>根</strong>。每条边都将某个节点连接到它的父亲，而除去根接待你外每一个节点都有一个父亲。<strong>没有子节点的节点叫做树叶(叶节点)<strong>，</strong>具有相同父节点称为兄弟节点</strong>。<strong>节点深度</strong>就是该节点到根节点的长度是多少，<strong>节点高度</strong>就是该节点到最近叶节点的长度。</li>
@@ -2303,7 +2303,7 @@
 
 
 
-<h4 id="树的遍历"><a href="#树的遍历" class="headerlink" title="树的遍历"></a>树的遍历</h4><p>树有很多应用。流行的用法之一是包括UNIX、VAX&#x2F;VMS和DOS在内的许多常用操作中的目录结构。</p>
+<h3 id="树的遍历"><a href="#树的遍历" class="headerlink" title="树的遍历"></a>树的遍历</h3><p>树有很多应用。流行的用法之一是包括UNIX、VAX&#x2F;VMS和DOS在内的许多常用操作中的目录结构。</p>
 <p><strong>核心思想</strong>：</p>
 <ul>
 <li>树的遍历的核心是<strong>递归</strong></li>
@@ -2321,7 +2321,7 @@
 <li>把全部小子树处理完，就处理树的根节点</li>
 <li><strong>后序遍历总是先处理子节点，再处理根节点</strong></li>
 </ul>
-<h4 id="二叉树"><a href="#二叉树" class="headerlink" title="二叉树"></a>二叉树</h4><p><strong>概念</strong>：</p>
+<h3 id="二叉树"><a href="#二叉树" class="headerlink" title="二叉树"></a>二叉树</h3><p><strong>概念</strong>：</p>
 <ul>
 <li><strong>二叉树(binary tree)<strong>是一颗</strong>每个节点都不能多于两个子节点</strong>的树，左边的子树称为左子树，右边的子树称为右子树</li>
 </ul>
@@ -2368,7 +2368,7 @@
 
 
 
-<h4 id="二叉查找树-二叉排序树"><a href="#二叉查找树-二叉排序树" class="headerlink" title="二叉查找树(二叉排序树)"></a>二叉查找树(二叉排序树)</h4><p><strong>概念</strong>：</p>
+<h3 id="二叉查找树-二叉排序树"><a href="#二叉查找树-二叉排序树" class="headerlink" title="二叉查找树(二叉排序树)"></a>二叉查找树(二叉排序树)</h3><p><strong>概念</strong>：</p>
 <ul>
 <li>二叉树的一个重要应用是它们在查找中的使用—二叉查找树</li>
 <li>二叉查找树<strong>每个节点的值都不同</strong>，以后再处理值相同的情况</li>
@@ -2398,7 +2398,7 @@
 
 
 
-<h4 id="平衡查找树-AVL树"><a href="#平衡查找树-AVL树" class="headerlink" title="平衡查找树(AVL树)"></a>平衡查找树(AVL树)</h4><p><strong>概念</strong>：</p>
+<h3 id="平衡查找树-AVL树"><a href="#平衡查找树-AVL树" class="headerlink" title="平衡查找树(AVL树)"></a>平衡查找树(AVL树)</h3><p><strong>概念</strong>：</p>
 <ul>
 <li>为了防止因为插入删除而导致的<strong>树结构不平衡</strong>(通常我们删除节点总是对右子树的最小值节点替代操作，而不是交替的利用左子树的最大值节点替代，这就将导致左子树的平均深度大于右子树平均深度，直接导致整颗树平均深度的增加，导致对树节点的操作时间增长)，导致对树的操作所用时间成倍数增长的问题，我们采用<strong>平衡二叉树—左右子树的平均深度差不多</strong>，达到一种平衡的操作，平衡二叉树希望对树的任意节点的操作时间为<em>O(logN)</em></li>
 <li>AVL(Adelson-Velskii和Landis)树是<strong>带有平衡条件的二叉查找树</strong>。这个平衡条件需要容易保持，而且需保证树的深度是O(logN)。</li>
@@ -2424,7 +2424,7 @@
 <li><p>对于2和3的情形称为<strong>插入发生在”内部”的情况</strong>(即<strong>左-右</strong>的情况或<strong>右-左</strong>的情况)，这个情况需要通过对<strong>树的双旋转</strong>来处理</p>
 </li>
 </ul>
-<h5 id="单旋转"><a href="#单旋转" class="headerlink" title="单旋转"></a><strong>单旋转</strong></h5><ul>
+<h4 id="单旋转"><a href="#单旋转" class="headerlink" title="单旋转"></a><strong>单旋转</strong></h4><ul>
 <li><p>对于情形1(如图4-31)，我们需要将造成不平衡的插入点上移一层，另外那个跟它高度差为2的节点下移一层(<strong>就是将α点跟其左节点进行单旋转</strong>(<em>单旋转就是类似将左节点拎起来，其他的节点根据重量下坠，然后再根据二叉查找树的特性排序形成新的平衡二叉树</em>))，并形成一个新的平衡二叉查找树，具体操作就如图4-32，插入6会破坏AVL树的特性，因为6是插入点，而8没有子节点(这个空的子节点其实就是被破坏平衡的高度差为2的节点)，它们的共同根节点就为8，所以8为α点，我们需要将α点的左节点也就是7跟α点也就是8进行单旋转，然后形成新的平衡查找树</p>
 <p>具体操作为：</p>
 <blockquote>
@@ -2451,7 +2451,7 @@
 <p><img src="https://cdn.jsdelivr.net/gh/MoonforDream/photohouse/hexo/202405191529608.png" srcset="/img/loading.gif" lazyload alt="image"></p>
 </li>
 </ul>
-<h5 id="双旋转"><a href="#双旋转" class="headerlink" title="双旋转"></a>双旋转</h5><ul>
+<h4 id="双旋转"><a href="#双旋转" class="headerlink" title="双旋转"></a>双旋转</h4><ul>
 <li><p>对于情形2和3，单旋转无法修正被破坏的AVL树，对于图4-34子树Y太深，单旋转无法减低它的深度</p>
 <p><img src="https://cdn.jsdelivr.net/gh/MoonforDream/photohouse/hexo/202405191529609.png" srcset="/img/loading.gif" lazyload alt="image"></p>
 </li>
@@ -2499,7 +2499,7 @@
 
 
 
-<h4 id="伸展树"><a href="#伸展树" class="headerlink" title="伸展树"></a>伸展树</h4><p><strong>概念</strong>：</p>
+<h3 id="伸展树"><a href="#伸展树" class="headerlink" title="伸展树"></a>伸展树</h3><p><strong>概念</strong>：</p>
 <ul>
 <li><strong>伸展树</strong>是一颗对<strong>任意一个节点被访问</strong>后，就经过<strong>一系列的AVL树的旋转操作</strong>将该<strong>节点放到根上</strong>的特殊<strong>二叉查找树</strong>。</li>
 <li>伸展树能<strong>保证对树操作M次的时间复杂度为O(MlogN)<strong>，而当一个查找树的一个节点刚好处于查找树最坏的情形，我们每次访问都需要按照最坏情形的时间计算，这将耗费</strong>O(M*N)<strong>的时间，伸展树就是要</strong>将访问的节点进行移动</strong>，使它不一直存在一个地方，避免了多次操作最坏情形的出现，而伸展树访问的节点比较深，经过移动，对该节点的原先子树节点访问也会避免往更深处进行操作</li>
@@ -2546,7 +2546,7 @@
 
 
 
-<h4 id="B-树-B-tree"><a href="#B-树-B-tree" class="headerlink" title="B-树(B-tree)"></a><strong>B-树(B-tree)</strong></h4><p><strong>概念</strong>：</p>
+<h3 id="B-树-B-tree"><a href="#B-树-B-tree" class="headerlink" title="B-树(B-tree)"></a><strong>B-树(B-tree)</strong></h3><p><strong>概念</strong>：</p>
 <ul>
 <li><p>B-树是一个<strong>非二叉树</strong>的<strong>多路平衡查找树(数据有序)<strong>，是</strong>一颗所有数据都存储在树叶节点上</strong>的树，不一定存储具体的数据，也可以是指向包含数据的记录的指针或地址</p>
 </li>
@@ -2615,7 +2615,7 @@
 
 
 
-<h4 id="红黑树-RB-tree"><a href="#红黑树-RB-tree" class="headerlink" title="红黑树(RB-tree)"></a>红黑树(RB-tree)</h4><p><strong>概念</strong>：</p>
+<h3 id="红黑树-RB-tree"><a href="#红黑树-RB-tree" class="headerlink" title="红黑树(RB-tree)"></a>红黑树(RB-tree)</h3><p><strong>概念</strong>：</p>
 <ul>
 <li><strong>红黑树</strong>是AVL树的变种，它<strong>是每一个节点或者着成红色，或者着成黑色的一棵二叉查找树。</strong></li>
 <li>对红黑树的操作<strong>在最坏情形下花费O(logN)时间</strong>，它的插入操作使用的是非递归形式实现</li>
@@ -2703,12 +2703,12 @@
 
 
 
-<h3 id="散列表-哈希表"><a href="#散列表-哈希表" class="headerlink" title="散列表(哈希表)"></a>散列表(哈希表)</h3><h5 id="概念-1"><a href="#概念-1" class="headerlink" title="概念"></a><strong>概念</strong></h5><ul>
+<h2 id="散列表-哈希表"><a href="#散列表-哈希表" class="headerlink" title="散列表(哈希表)"></a>散列表(哈希表)</h2><h4 id="概念-1"><a href="#概念-1" class="headerlink" title="概念"></a><strong>概念</strong></h4><ul>
 <li><strong>散列(hashing)<strong>是一种用于以</strong>常数平均时间</strong>执行插入、删除和查找的技术。</li>
 <li>散列不支持排序，所以散列表是无序的。</li>
 <li>散列是一种存储结构(实质是一个<strong>数组</strong>，用于存储关键字值，关键字的存储<em>下标</em>就是根据关键字<em>映射</em>(通过散列函数也就是哈希函数)出来的位置)，**根据记录的存储位置与关键字之间存在对应关系(散列(哈希)函数)**，–<strong>也就是通过哈希函数对关键字值的处理，得出该关键字值在散列表中的存储位置</strong></li>
 </ul>
-<h5 id="散列函数-哈希函数"><a href="#散列函数-哈希函数" class="headerlink" title="散列函数(哈希函数)"></a><strong>散列函数(哈希函数)</strong></h5><blockquote>
+<h4 id="散列函数-哈希函数"><a href="#散列函数-哈希函数" class="headerlink" title="散列函数(哈希函数)"></a><strong>散列函数(哈希函数)</strong></h4><blockquote>
 <p>散列函数特性：</p>
 <ol>
 <li>简单快速</li>
@@ -2741,7 +2741,7 @@
 <li><p><strong>平方取中法</strong><br><strong>介绍</strong>：当<strong>无法确定关键字中哪几位分布较均为时</strong>，可以<strong>求出关键字的平方值，然后按需要取平方值的中间几位作为散列地址</strong>。这是因为:平方后中间几位和关键字中每一位都有关，故不同关键字会以较高的概率产生不同的散列地址。<br>举例:关键字序列:{3213,3113,3212,4312}。<br>分析:<br>3213^2&#x3D;10323369<br>3113^2&#x3D;9690769<br>3212^2&#x3D;10316944<br>4312^2&#x3D;18593344<br>取平方值中间4位为散列地址(3113的平方值前面补0凑成8位)<br>结果<br>H(3213)&#x3D;3233,H(3113)&#x3D;6907,H(3212)&#x3D;3169,H(4312)&#x3D;5933</p>
 </li>
 </ol>
-<h5 id="解决冲突"><a href="#解决冲突" class="headerlink" title="解决冲突"></a><strong>解决冲突</strong></h5><ul>
+<h4 id="解决冲突"><a href="#解决冲突" class="headerlink" title="解决冲突"></a><strong>解决冲突</strong></h4><ul>
 <li><p><strong>负载因子(local factor)<strong>为</strong>散列表中的元素个数与散列表的大小的比值</strong>。</p>
 <blockquote>
 <ol>
@@ -2814,7 +2814,7 @@
 <p><img src="https://cdn.jsdelivr.net/gh/MoonforDream/photohouse/hexo/202405191529621.png" srcset="/img/loading.gif" lazyload alt="image"></p>
 </li>
 </ul>
-<h3 id="堆-优先队列"><a href="#堆-优先队列" class="headerlink" title="堆(优先队列)"></a>堆(优先队列)</h3><h4 id="二叉堆"><a href="#二叉堆" class="headerlink" title="二叉堆"></a>二叉堆</h4><p><strong>概念</strong>：</p>
+<h2 id="堆-优先队列"><a href="#堆-优先队列" class="headerlink" title="堆(优先队列)"></a>堆(优先队列)</h2><h3 id="二叉堆"><a href="#二叉堆" class="headerlink" title="二叉堆"></a>二叉堆</h3><p><strong>概念</strong>：</p>
 <ul>
 <li><p>优先队列是一个根据优先性而先去执行操作的一种特殊队列，平常队列是先进先出，但是优先队列是根据优先级选择先出的元素。优先队列的主要操作有插入和删除最小值</p>
 </li>
@@ -2872,14 +2872,14 @@
 
 
 
-<h4 id="d-堆"><a href="#d-堆" class="headerlink" title="d-堆"></a>d-堆</h4><p><strong>概念</strong>：</p>
+<h3 id="d-堆"><a href="#d-堆" class="headerlink" title="d-堆"></a>d-堆</h3><p><strong>概念</strong>：</p>
 <ul>
 <li><strong>d-堆</strong>是二叉堆的简单推广，<strong>它的所有的节点都有d个子节点</strong>，<strong>d-堆的底层也是由一颗完全树构成的</strong>，二叉堆是由完全二叉树构成，3-堆则就是由完全三叉树构成</li>
 <li>当<strong>堆太大不能完全装入主存的时候</strong>，<strong>d-堆就很有用</strong>，因为<strong>d-堆能够以与B-树大致相同的方式发挥作用</strong></li>
 <li>d-堆的高度比较浅</li>
 <li>d-堆的性质跟二叉堆相同。因为二叉堆是d-堆的一种特殊情况。</li>
 </ul>
-<h4 id="左式堆"><a href="#左式堆" class="headerlink" title="左式堆"></a>左式堆</h4><p><strong>概念</strong>：</p>
+<h3 id="左式堆"><a href="#左式堆" class="headerlink" title="左式堆"></a>左式堆</h3><p><strong>概念</strong>：</p>
 <ul>
 <li>左式堆是<strong>一种能够高效的支持合并操作的堆</strong>，左式堆的<strong>底层也是由二叉树实现</strong>，但是左式堆不是平衡的(<strong>不由完全二叉树实现的</strong>)，<strong>左式堆趋向于不平衡</strong>。</li>
 <li>左式堆也像二叉堆一样拥有着堆的特性(有序性和结构性)，<strong>左式堆是最小堆</strong></li>
@@ -2915,7 +2915,7 @@
 
 
 
-<h4 id="斜堆"><a href="#斜堆" class="headerlink" title="斜堆"></a>斜堆</h4><p><strong>概念</strong>：</p>
+<h3 id="斜堆"><a href="#斜堆" class="headerlink" title="斜堆"></a>斜堆</h3><p><strong>概念</strong>：</p>
 <ul>
 <li><strong>斜堆</strong>是<strong>左式堆的自调节形式</strong>，斜堆和左式堆间的关系类似于伸展树和AVL树间的关系</li>
 <li>斜堆是<strong>具有堆序性的二叉树</strong>，但是<strong>不存在对树的结构限制</strong></li>
@@ -2948,7 +2948,7 @@
 
 
 
-<h3 id="图"><a href="#图" class="headerlink" title="图"></a>图</h3><p><strong>概念</strong>：</p>
+<h2 id="图"><a href="#图" class="headerlink" title="图"></a>图</h2><p><strong>概念</strong>：</p>
 <ul>
 <li>一个<strong>图(graph)<strong>G&#x3D;(V,E)<strong>由顶点集V和边集E组成</strong>，</strong>每一条边就是一个点对(u,w)，其中u，w∈V</strong>，有时边称作弧，如果<strong>点对是有序的，那么组成的图叫做有向图，反之就是无向图</strong>。有时候<strong>边还具有第三种成分，称作权或值。</strong></li>
 <li>图中的<strong>一条路径是一个顶点序列w1,w2,w3….wn，使得(w<sub>i</sub>,w<sub>i+1</sub>)∈E，1&lt;i&lt;N；</strong>这样一<strong>条路径的长度就为该路径的边数</strong>。如果图中<strong>含有一条从顶点到自身的边(u,u)，那么路径v,v称作为环</strong>。而我们讨论的图一般是无环的。</li>
