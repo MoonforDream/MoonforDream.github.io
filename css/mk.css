@@ -102,7 +102,7 @@ h1:after {
   margin: 0.2em auto 0;
   width: 100px;
   height: 2px;
-  border-bottom: 2px solid var(--title-color);
+  /* border-bottom: 2px solid var(--title-color); */
 }
 
 h2 {
