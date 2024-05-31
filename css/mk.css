@@ -49,7 +49,8 @@ h6 {
   font-weight: normal;
   /* line-height: 1.0; */
   cursor: text;
-  color: var(--title-color);
+  /* color: #6c549c; */
+  /* color: var(--title-color); */
 }
 
 h1 tt,
