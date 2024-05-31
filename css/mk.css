@@ -37,6 +37,10 @@
 }
 
 
+.markdown-body h1, .markdown-body h2 {
+    border-bottom: none;
+}
+
 h1,
 h2,
 h3,
