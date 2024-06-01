@@ -54,6 +54,7 @@
   position: relative;
   margin-top: 3.5em;
   font-weight: normal;
+  /* font-weight: bold; */
   cursor: text;
   color: #6c549c;
 }
