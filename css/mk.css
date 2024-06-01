@@ -41,21 +41,21 @@
     border-bottom: none;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+
+
+
+
+.markdown-body > h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
   position: relative;
-  margin-top: 1rem;
-  margin-bottom: 0.5rem;
-  /* font-weight: bold; */
+  margin-top: 3.5em;
   font-weight: normal;
-  /* line-height: 1.0; */
   cursor: text;
   color: #6c549c;
-  /* color: var(--title-color); */
 }
 
 h1 tt,
@@ -156,6 +156,3 @@ h6 {
 .markdown-body pre {
   --select-text-bg-color: rgba(223, 197, 223) !important;
 }
-
-
-
