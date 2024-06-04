@@ -23,14 +23,15 @@
 <meta property="og:site_name" content="Moon&#39;s Blog">
 <meta property="og:description" content="讲解用于解决TCP长连接是否存活的心跳机制，以及使用心跳包来解决客户端&#x2F;服务端因非正常断开等问题而导致对端TCP连接未断开问题">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://moonfordream.github.io/study/images/image-20240602024456187.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/MoonforDream/photohouse/hexo/202406041056256.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/MoonforDream/photohouse/hexo/202406041056257.png">
 <meta property="article:published_time" content="2024-06-01T17:20:27.000Z">
-<meta property="article:modified_time" content="2024-06-04T02:44:31.457Z">
+<meta property="article:modified_time" content="2024-06-04T02:56:28.647Z">
 <meta property="article:author" content="Moon">
 <meta property="article:tag" content="后台开发">
 <meta property="article:tag" content="C&#x2F;C++">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://moonfordream.github.io/study/images/image-20240602024456187.png">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/MoonforDream/photohouse/hexo/202406041056256.png">
   
   
   
@@ -426,7 +427,7 @@
 <li>服务端收到包，服务端检测接收的包头，来判断是否是来自客户端的心跳包，是则给予客户端回应，然后更新计时器为0</li>
 <li>服务端没有收到心跳包并且客户端与服务端没来往，服务端根据当前客户端与服务端的空闲时间与设定的心跳包超时时间比较，进行判断用户是否掉线，如果掉线，则清理资源，断开连接</li>
 </ol>
-<p><img src="/../../../study/images/image-20240602024456187.png" srcset="/img/loading.gif" lazyload alt="image-20240602024456187"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/MoonforDream/photohouse/hexo/202406041056256.png" srcset="/img/loading.gif" lazyload alt="image-20240602024456187"></p>
 <p><strong>心跳检测步骤：</strong><br>1.服务端每隔一个时间间隔发生一个探测包给客户端<br>2.服务端发包时启动一个超时定时器<br>3.客户端端接收到检测包，应该回应一个包<br>4.如果服务端收到客户端的应答包，则说明客户端正常，删除超时定时器<br>5.如果服务端端的超时定时器超时，依然没有收到应答包则说明客户端挂了</p>
 <h3 id="应用层心跳机制实现"><a href="#应用层心跳机制实现" class="headerlink" title="应用层心跳机制实现"></a>应用层心跳机制实现</h3><p>以下是示例实现，以一个非阻塞ET模式的回声服务器为例。</p>
 <p><strong>服务端具体实现</strong>：</p>
@@ -550,30 +551,8 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<p><strong>运行结果</strong>：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/MoonforDream/photohouse/hexo/202406041056257.png" srcset="/img/loading.gif" lazyload alt="image-20240604105557379"></p>
 <h3 id="TCP-keepalive"><a href="#TCP-keepalive" class="headerlink" title="TCP keepalive"></a>TCP keepalive</h3><p><strong>实现原理</strong>：</p>
 <ul>
 <li><p><strong>使用SOL_SOCKET协议层下的SO_KEEPALIVE来保持连接</strong></p>
