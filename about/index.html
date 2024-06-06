@@ -24,7 +24,7 @@
 <meta property="og:description" content="我是一名计算机学生，致力于服务端开发，对于服务端开发非常的感兴趣如果你看了我的博客，与我志同道合，并且想一起进步，可以去友链页进行填写申请信息在这里也祝愿各位 春风得意马蹄疾， 一日看尽长安花！">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-05-19T16:52:51.000Z">
-<meta property="article:modified_time" content="2024-06-01T04:38:12.462Z">
+<meta property="article:modified_time" content="2024-06-06T01:42:02.609Z">
 <meta property="article:author" content="Moon">
 <meta name="twitter:card" content="summary_large_image">
   
@@ -287,6 +287,40 @@
 
   </div>
 
+  
+    <!-- Comments -->
+    <article id="comments" lazyload>
+      
+      
+        
+      
+      
+  <div id="twikoo"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#comments', function() {
+      Fluid.utils.createScript('https://lib.baomitu.com/twikoo/1.6.8/twikoo.all.min.js', function() {
+        var options = Object.assign(
+          {"envId":"https://moon-twikoo.netlify.app/.netlify/functions/twikoo","region":"ap-shanghai","path":"window.location.pathname"},
+          {
+            el: '#twikoo',
+            path: 'window.location.pathname',
+            onCommentLoaded: function() {
+              Fluid.utils.listenDOMLoaded(function() {
+                var imgSelector = '#twikoo .tk-content img:not(.tk-owo-emotion)';
+                Fluid.plugins.imageCaption(imgSelector);
+                Fluid.plugins.fancyBox(imgSelector);
+              });
+            }
+          }
+        )
+        twikoo.init(options)
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
   
 </article>
 
