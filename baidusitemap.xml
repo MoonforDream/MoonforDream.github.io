@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://moonfordream.github.io//posts/C-%E5%AD%A6%E4%B9%A0/</loc>
+    <lastmod>2024-06-20</lastmod>
+  </url>
+  <url>
     <loc>https://moonfordream.github.io//posts/%E5%85%B3%E4%BA%8Estd-ref%E5%87%BD%E6%95%B0/</loc>
     <lastmod>2024-06-19</lastmod>
   </url>
@@ -54,10 +58,6 @@
   </url>
   <url>
     <loc>https://moonfordream.github.io//posts/Django%E6%A1%86%E6%9E%B6%E5%AD%A6%E4%B9%A0%E4%B8%8E%E5%BC%80%E5%8F%91/</loc>
-    <lastmod>2024-06-01</lastmod>
-  </url>
-  <url>
-    <loc>https://moonfordream.github.io//posts/C-%E5%AD%A6%E4%B9%A0/</loc>
     <lastmod>2024-06-01</lastmod>
   </url>
   <url>
