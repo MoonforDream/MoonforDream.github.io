@@ -1,3 +1,6 @@
+https://moonfordream.github.io/posts/C-%E5%AE%8C%E7%BE%8E%E8%BD%AC%E5%8F%91/
+https://moonfordream.github.io/posts/C-Lambda%E5%87%BD%E6%95%B0/
+https://moonfordream.github.io/posts/C-%E6%99%BA%E8%83%BD%E6%8C%87%E9%92%88/
 https://moonfordream.github.io/posts/C-%E5%AD%A6%E4%B9%A0/
 https://moonfordream.github.io/posts/C-RAII%E6%9C%BA%E5%88%B6/
 https://moonfordream.github.io/posts/%E5%85%B3%E4%BA%8Estd-ref%E5%87%BD%E6%95%B0/
