@@ -25,7 +25,7 @@
 <meta property="og:description" content="本篇包含学习CMake构建工具笔记，以及使用CMake构建项目">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-09-30T07:51:38.000Z">
-<meta property="article:modified_time" content="2024-10-02T05:48:12.468Z">
+<meta property="article:modified_time" content="2024-10-02T06:08:02.448Z">
 <meta property="article:author" content="Moon">
 <meta property="article:tag" content="C++">
 <meta property="article:tag" content="CMake">
@@ -473,45 +473,33 @@
 <h3 id="CMake函数"><a href="#CMake函数" class="headerlink" title="CMake函数"></a>CMake函数</h3><p><strong>CMake中定义函数</strong>：</p>
 <figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs cmake"><span class="hljs-comment"># 定义函数，&lt;name&gt;为函数名，[&lt;arg&gt;...]为函数参数(可选添加)</span><br><span class="hljs-keyword">function</span>(&lt;name&gt; [&lt;arg&gt; ...])<br>	&lt;commands&gt;<br><span class="hljs-keyword">endfunction</span>()<br></code></pre></td></tr></table></figure>
 
-
-
-
-
-
-
-
-
+<p>​	</p>
+<p>​	</p>
+<p>​	</p>
 <p><strong>CMake提供常用函数</strong>：</p>
+<p>​	</p>
 <p><code>PROJECT()</code>：</p>
 <ul>
 <li><strong>用来指定工程的名字、支持的语言以及版本号，默认支持所有语言</strong></li>
 <li>并且<strong>隐式定义了&lt;projectname&gt;_BINARY_DIR和&lt;projectname&gt;_SOURCE_DIR两个CMake变量，两个变量都指向当前的工作目录</strong></li>
 <li>但是工程名变化，隐式定义的两个变量也会随之更改，我们<strong>可以直接使用两个预定义的PROJECT_BINARY_DIR和PROJECT_SOURCE_DIR进行代替使用</strong></li>
 </ul>
-<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs cmake"><span class="hljs-comment"># PROJECT/project</span><br><span class="hljs-keyword">project</span>(&lt;project_name&gt; [&lt;language&gt;...])<br><br><span class="hljs-comment">#指定了工程的名字为main,并且支持所有语言</span><br><span class="hljs-keyword">PROJECT</span>(MAIN)/<span class="hljs-keyword">project</span>(MAIN)<br><br><span class="hljs-comment">#指定了工程的名字为main,支持所有语言，版本号为1.0</span><br><span class="hljs-keyword">PROJECT</span>(MAIN VERSION <span class="hljs-number">1.0</span>)<br><br><span class="hljs-comment">#指定了工程的名字为main，并且支持C++语言</span><br><span class="hljs-keyword">PROJECT</span>(MAIN CXX)/<span class="hljs-keyword">project</span>(MAIN CXX)<br><br><span class="hljs-comment">#指定了工程名字为main，并且支持C、C++语言</span><br><span class="hljs-keyword">PROJECT</span>(MAIN C CXX)/<span class="hljs-keyword">project</span>(MAIN C CXX)<br><br><span class="hljs-comment"># 隐式定义了MAIN_BINARY_DIR和MAIN_SOURCE_DIR两个CMake变量</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs cmake"><span class="hljs-comment"># PROJECT/project</span><br><span class="hljs-keyword">project</span>(&lt;project_name&gt; [&lt;language&gt;...])<br><br><span class="hljs-comment">#指定了工程的名字为main,并且支持所有语言</span><br><span class="hljs-keyword">PROJECT</span>(MAIN)/<span class="hljs-keyword">project</span>(MAIN)<br><br><span class="hljs-comment">#指定了工程的名字为main,支持所有语言，版本号为1.0</span><br><span class="hljs-keyword">PROJECT</span>(MAIN VERSION <span class="hljs-number">1.0</span>)<br><br><span class="hljs-comment">#指定了工程的名字为main，并且支持C++语言</span><br><span class="hljs-keyword">PROJECT</span>(MAIN CXX)/<span class="hljs-keyword">project</span>(MAIN CXX)<br><br><span class="hljs-comment">#指定了工程名字为main，并且支持C、C++语言</span><br><span class="hljs-keyword">PROJECT</span>(MAIN C CXX)/<span class="hljs-keyword">project</span>(MAIN C CXX)<br><br><span class="hljs-comment"># 隐式定义了MAIN_BINARY_DIR和MAIN_SOURCE_DIR两个CMake变量	</span><br></code></pre></td></tr></table></figure>
 
-
-
-
-
+<p>​	</p>
+<p>​	</p>
 <p><code>CMAKE_MINIMUM_REQUIRED()</code>：<strong>设置所需的最低CMake版本</strong></p>
 <figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs cmake"><span class="hljs-comment"># CMAKE_MINIMUM_REQUIRED/cmake_minimum_required</span><br><span class="hljs-keyword">cmake_minimum_required</span>(VERSION &lt;version_num&gt;);<br><br><span class="hljs-comment"># 设置cmake最低版本为3.5</span><br><span class="hljs-keyword">cmake_minimum_required</span>(VERSION <span class="hljs-number">3.5</span>)<br></code></pre></td></tr></table></figure>
 
-
-
-
-
+<p>​	</p>
+<p>​	</p>
+<p>​		</p>
 <p><code>SET()</code>：<strong>用来设置变量的值</strong></p>
 <figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs cmake"><span class="hljs-comment"># SET/set</span><br><span class="hljs-keyword">set</span>(&lt;variable&gt; &lt;value&gt;...)<br><br><span class="hljs-comment"># 将list变量值设置为main.cpp</span><br><span class="hljs-keyword">set</span>(<span class="hljs-keyword">list</span> main.cpp)<br><br><span class="hljs-comment"># 多值用空格分隔</span><br><span class="hljs-keyword">set</span>(<span class="hljs-keyword">list</span> main.cpp main1.cpp ...)<br></code></pre></td></tr></table></figure>
 
-
-
-
-
-
-
-
-
+<p>​	</p>
+<p>​	</p>
+<p>​	</p>
 <p><code>MESSAGE()</code>：<strong>向终端输出用户自定义信息</strong></p>
 <p><strong>消息的一些类型</strong>：</p>
 <ol>
@@ -522,28 +510,20 @@
 </ol>
 <figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs cmake"><span class="hljs-comment"># MESSAGE/message</span><br><span class="hljs-keyword">message</span>([&lt;mode&gt;] <span class="hljs-string">&quot;message text&quot;</span> ...)<br><br><span class="hljs-comment"># 以指定STATUS形式向终端输出消息</span><br><span class="hljs-keyword">message</span>(STATUS,<span class="hljs-string">&quot;hello&quot;</span>)<br></code></pre></td></tr></table></figure>
 
-
-
-
-
-
-
+<p>​	</p>
+<p>​	</p>
+<p>​	</p>
 <p><code>ADD_COMPILE_OPTIONS()</code>：<strong>添加编译参数</strong></p>
 <figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs cmake"><span class="hljs-comment"># ADD_COMPILE_OPTIONS/add_compile_options</span><br><span class="hljs-comment"># value为参数</span><br><span class="hljs-keyword">add_compile_options</span>(&lt;value&gt; [&lt;value&gt; ...])<br></code></pre></td></tr></table></figure>
 
-
-
-
-
-
-
+<p>​	</p>
+<p>​	</p>
+<p>​	</p>
 <p><code>ADD_SUBDIRECTORY()</code>：<strong>可以将指定的存放源文件的子目录加入工程，并在该子目录中执行CMakeLists.txt，并指定编译输出路径</strong></p>
 <figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs cmake"><span class="hljs-comment"># ADD_SUBDIRECTORY/add_subdirectory</span><br><span class="hljs-keyword">add_subdirectory</span>(&lt;source_dir&gt; [binary_dir] [EXCLUDE_FROM_ALL])<br><br><span class="hljs-comment"># [binary_dir]为可选参数，用于指定输出路径，如果不进行指定，默认将存放在build/src目录下</span><br><span class="hljs-keyword">add_subdirectory</span>(src bin)  <span class="hljs-comment"># 将src编译输出到bin目录中</span><br><br><span class="hljs-comment"># [EXCLUDE_FROM_ALL]为可选参数，是用于将source_dir目录不参加工程的编译</span><br><span class="hljs-keyword">add_subdirectory</span>(example EXCLUDE_FROM_ALL) <span class="hljs-comment"># example目录不参加工程构建编译</span><br></code></pre></td></tr></table></figure>
 
-
-
-
-
+<p>​	</p>
+<p>​	</p>
 <p><code>ADD_LIBRARY()</code>：<strong>创建一个库(静态库或动态库)</strong></p>
 <p><strong>type</strong>：</p>
 <ul>
@@ -552,21 +532,15 @@
 </ul>
 <figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs cmake"><span class="hljs-comment"># ADD_LIBRARY/add_library</span><br><span class="hljs-comment"># &lt;target&gt;为创建的库名，&lt;type&gt;为生成的库类型，&lt;source_files&gt;...为创建该库的源文件</span><br><span class="hljs-keyword">add_library</span>(&lt;<span class="hljs-keyword">target</span>&gt; &lt;type&gt; &lt;source_files&gt;...)<br></code></pre></td></tr></table></figure>
 
-
-
-
-
-
-
+<p>​	</p>
+<p>​	</p>
+<p>​	</p>
 <p><code>ADD_EXECUTABLE()</code>：<strong>生成可执行文件</strong></p>
 <figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs cmake"><span class="hljs-comment"># ADD_EXECUTABLE/add_executable</span><br><span class="hljs-keyword">add_executable</span>(&lt;<span class="hljs-keyword">target</span>&gt; &lt;source_files&gt;...)<br><br><span class="hljs-comment"># 可执行文件名为main,其用于编译构建的源文件为main.cpp</span><br><span class="hljs-keyword">add_executable</span>(main main.cpp)<br><br><span class="hljs-comment"># 可以使用$&#123;PROJECT_NAME&#125;自动解析工程名直接代替可执行文件名</span><br><span class="hljs-keyword">add_executable</span>(<span class="hljs-variable">$&#123;PROJECT_NAME&#125;</span> main.cpp)<br></code></pre></td></tr></table></figure>
 
-
-
-
-
-
-
+<p>​	</p>
+<p>​	</p>
+<p>​	</p>
 <p><code>INSTALL()</code>：<strong>用于指定在安装时运行的规则，可以用来安装包括目标二进制、动态库、静态库以及文件、目录、脚本等到指定目录</strong>，用于执行make install命令下安装对应文件</p>
 <p><strong>type</strong>：</p>
 <ul>
@@ -584,58 +558,40 @@
 </ul>
 <figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs cmake"><span class="hljs-comment"># INSTALL/install</span><br><span class="hljs-comment"># &lt;type&gt;为安装文件的类型，&lt;target&gt;...为要安装的文件，[DESTINATION ...]可选是用来指定各安装文件指定安装路径</span><br><span class="hljs-keyword">install</span>(&lt;type&gt; &lt;<span class="hljs-keyword">target</span>&gt;...[DESTINATION ...])<br></code></pre></td></tr></table></figure>
 
-
-
-
-
-
-
+<p>​	</p>
+<p>​	</p>
 <p><code>AUX_SOURCE_DIRECTORY()</code>：<strong>用于查找指定目录下的源文件</strong></p>
 <figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs cmake"><span class="hljs-comment"># AUX_SOURCE_DIRECTORY/aux_source_directory</span><br><span class="hljs-comment"># dir为要查找的目录，value用于存储所有查找到的源文件</span><br><span class="hljs-keyword">aux_source_directory</span>(&lt;dir&gt; &lt;value&gt;)<br></code></pre></td></tr></table></figure>
 
-
-
-
-
+<p>​	</p>
+<p>​	</p>
 <p><code>LINK_DIRECTORIES()</code>：<strong>在指定路径下寻找库文件</strong></p>
 <figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs cmake"><span class="hljs-comment"># LINK_DIRECTORIES/link_directories</span><br><span class="hljs-comment"># path为要找寻的库文件的路径</span><br><span class="hljs-keyword">link_directories</span>(&lt;path&gt;)<br></code></pre></td></tr></table></figure>
 
-
-
+<p>​	</p>
+<p>​	</p>
 <p><code>FIND_LIBRARY()</code>：<strong>查找库文件路径</strong></p>
 <figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs cmake"><span class="hljs-comment"># FIND_LIBRARY/find_library</span><br><br><span class="hljs-comment"># &lt;variable&gt;为存储找到的库文件路径的变量名，如果找到库，该变量将被设置为库文件的全路径；否则，变量将保留未定义状态或被设置为空字符串</span><br><span class="hljs-comment"># NAMES后面的&lt;name&gt;为指定要查找的库文件名。通常包括库的基础名称（如 calc）和可能的后缀（如 .a、.so、.dll 等）。可以指定多个备选名称</span><br><span class="hljs-comment"># HINTS、PATHS: 提供查找库文件的额外路径提示或直接路径。HINTS 的优先级高于 PATHS。这些路径将被添加到 CMake 的默认查找路径中。</span><br><span class="hljs-keyword">find_library</span>(&lt;variable&gt;<br>             NAMES &lt;name1&gt; [&lt;name2&gt; ...]<br>             HINTS &lt;hint1&gt; [&lt;hint2&gt; ...]<br>             PATHS &lt;path1&gt; [&lt;path2&gt; ...]<br>						...])<br></code></pre></td></tr></table></figure>
 
-
-
-
-
+<p>​	</p>
+<p>​	</p>
 <p><code>LINK_LIBRARIES()</code>：<strong>链接静态库</strong></p>
 <figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs cmake"><span class="hljs-comment"># LINK_LIBRARIES/link_libraries</span><br><span class="hljs-comment"># &lt;static lib&gt;为静态库名，可以是全名，也可以是去除lib和文件类型后缀的名字</span><br><span class="hljs-keyword">link_libraries</span>(&lt;statci lib&gt; [&lt;static lib&gt; ...])<br></code></pre></td></tr></table></figure>
 
-
-
-
-
-
-
+<p>​	</p>
+<p>​	</p>
 <p><code>TARGET_LINK_LIBRARIES()</code>：<strong>链接动态库</strong></p>
 <figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs cmake"><span class="hljs-comment"># TARGET_LINK_LIBRARIES/target_link_libraries</span><br><span class="hljs-comment"># target为要链接的可执行文件名，&lt;shared lib&gt;为动态库名，可以是全名，也可以是去除lib和文件类型后缀的名字</span><br><span class="hljs-keyword">target_link_libraries</span>(&lt;<span class="hljs-keyword">target</span>&gt; &lt;shared lib&gt; [&lt;shared lib&gt; ...])<br></code></pre></td></tr></table></figure>
 
-
-
-
-
+<p>​	</p>
+<p>​	</p>
 <p><code>set_target_properties/SET_TARGET_PROPERTIES()</code>：<strong>设置目标属性，可以用来设置输出名称，对于动态库可以指定动态库版本和API版本</strong></p>
 <figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs cmake"><span class="hljs-comment"># SET_TARGET_PROPERTIES/set_target_properties</span><br><span class="hljs-comment"># target为目标，&lt;prop&gt;为属性，&lt;value&gt;为设置的值</span><br><span class="hljs-keyword">set_target_properties</span>(&lt;<span class="hljs-keyword">target</span>&gt; [&lt;<span class="hljs-keyword">target</span>&gt; ...]<br>					  PROPERTIES &lt;prop1&gt; &lt;value1&gt;<br>					  [&lt;prop2&gt; &lt;value2&gt; ...])<br></code></pre></td></tr></table></figure>
 
 
 
-
-
-
-
-
-
+<p>​	</p>
+<p>​	</p>
 <h2 id="静态-动态库"><a href="#静态-动态库" class="headerlink" title="静态&#x2F;动态库"></a>静态&#x2F;动态库</h2><p><strong>构建前准备</strong>：</p>
 <ol>
 <li>创建工程目录</li>
