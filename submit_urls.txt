@@ -1,3 +1,4 @@
+https://moonfordream.github.io/posts/YAML%E8%A7%A3%E6%9E%90%E5%BA%93-yaml-cpp/
 https://moonfordream.github.io/posts/CMake%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/
 https://moonfordream.github.io/posts/Linux%E7%B3%BB%E7%BB%9F%E7%BC%96%E7%A8%8B/
 https://moonfordream.github.io/posts/Git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/
@@ -17,4 +18,3 @@ https://moonfordream.github.io/posts/hexo-github%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%B
 https://moonfordream.github.io/posts/Fluid%E7%BE%8E%E5%8C%96/
 https://moonfordream.github.io/posts/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/
 https://moonfordream.github.io/posts/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86/
-https://moonfordream.github.io/posts/arch%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/
