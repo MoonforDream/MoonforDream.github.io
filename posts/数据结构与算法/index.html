@@ -58,7 +58,7 @@
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/MoonforDream/photohouse/hexo/202405191529620.png">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/MoonforDream/photohouse/hexo/202405191529621.png">
 <meta property="article:published_time" content="2024-05-19T07:07:29.000Z">
-<meta property="article:modified_time" content="2024-08-13T08:39:52.577Z">
+<meta property="article:modified_time" content="2024-11-01T05:04:40.116Z">
 <meta property="article:author" content="Moon">
 <meta property="article:tag" content="后台开发">
 <meta property="article:tag" content="C&#x2F;C++">
@@ -275,7 +275,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          52k 字
+          54k 字
         
       </span>
     
@@ -286,7 +286,7 @@
         
         
         
-          437 分钟
+          451 分钟
         
       </span>
     
@@ -1379,7 +1379,7 @@
 <li><strong>找出每组的中项(中间值)<strong>，</strong>得到向下取整(N&#x2F;5)个中项的表M</strong></li>
 <li><strong>求出M的中项，将其作为枢纽元v返回</strong></li>
 </ul>
-<h2 id="字符串匹配算法"><a href="#字符串匹配算法" class="headerlink" title="字符串匹配算法"></a>字符串匹配算法</h2><h3 id="KMP算法"><a href="#KMP算法" class="headerlink" title="KMP算法"></a>KMP算法</h3><p><strong>概念</strong>：</p>
+<h2 id="字符串算法"><a href="#字符串算法" class="headerlink" title="字符串算法"></a>字符串算法</h2><h3 id="KMP算法"><a href="#KMP算法" class="headerlink" title="KMP算法"></a>KMP算法</h3><p><strong>概念</strong>：</p>
 <ul>
 <li><strong>KMP算法</strong>是用于解决字符串匹配的问题的算法，也就是有<strong>一个文本串和一个模式串</strong>，<strong>求解这个模式串是否在文本串中出现或者匹配</strong>。</li>
 <li>相对于暴力求解，KMP算法<strong>使用了前缀表来进行匹配</strong>，充分利用了之前匹配的字符，减少了重新匹配全部模式串的时间。</li>
@@ -1435,16 +1435,70 @@
 
 
 
+<h3 id="Manacher算法"><a href="#Manacher算法" class="headerlink" title="Manacher算法"></a>Manacher算法</h3><p><strong>概念</strong>：</p>
+<ul>
+<li><code>Manacher算法</code>是以<strong>线性时间复杂度</strong>来<strong>求解最长回文子串</strong>的相关问题</li>
+<li>最长回文子串的相关问题的常见做法就是由中心扩展法和动态规划来解决，但是这两种算法的时间复杂度都需要O(n<sup>2</sup>)，其根本原因在于<strong>要对奇数偶数分别扩展两次以及对于回文半径内重复扩展问题</strong></li>
+<li>Manacher算法可以解决分别对奇数偶数进行扩展以及重复扩展问题，使得时间复杂度降为<code>O(n)</code></li>
+</ul>
+<p>​	</p>
+<p>​	</p>
+<p><strong>最长回文子串问题</strong>：</p>
+<ul>
+<li>回文是指逆序之后与原始字符串相等，例如(aba,abcba等等)</li>
+<li>最长回文子串是一个字符串中所包含的最长的回文字符串，例如(abbbc的最长回文子串为bbb)</li>
+</ul>
+<p>​	</p>
+<p>​	</p>
+<p><strong>Manacher算法具体思想</strong>：</p>
+<ol>
+<li><code>统一奇偶性</code>：对于奇偶问题，<strong>Manacher算法的做法是将每个字符之间(空隙)插入一个’#’字符，这样就可以将奇偶问题统一成为奇数</strong>，避免了奇数和偶数两次扩展问题(例如：abbb –&gt; #a#b#b#b#，abb –&gt; #a#b#b#)</li>
+<li><code>重复利用回文半径</code>：<strong>利用已知的回文半径信息，以及回文子串对称的特性</strong>，避免重复计算。比方说，我有一个”abcbaeabcba…”的一个字符串，当前我已经计算出以字符’e’的回文半径为5,也就是”abcba e abcba”这样的回文子串，现在我求解到了右边字符’c’时，这个时候我们就没必要重复扩展了，而是利用回文半径中对称的左边字符’c’提供的回文半径</li>
+<li><code>维护回文半径数组</code>：既然我们需要利用到已经扩展好的信息，则我们就<strong>需要维护一个保存这些信息的数组</strong>，因此我们需要维护一个数组<code>P</code>，其中<code>P[i]</code>表示以字符<code>i</code>为中心的最长回文子串的半径 (不包括中心字符本身)</li>
+</ol>
+<p>​	</p>
+<p>​	</p>
+<p><strong>Manacher算法具体步骤</strong>：</p>
+<ol>
+<li><p><code>统一奇偶性</code>：对原字符串进行预处理，插入特殊字符’#’</p>
+</li>
+<li><p><code>简化边界判断</code>：在预处理好后的字符串首部和末尾添加特殊字符，来简化边界判断，防止越界，我这里在首部添加”^”，末尾添加”$”符号</p>
+</li>
+<li><p><code>创建并初始化回文半径数组</code>：创建<code>回文半径数组p</code>，设置<code>回文中心c</code>、<code>回文覆盖最右边界r</code>为0</p>
+</li>
+<li><p><code>计算回文半径</code>：从前往后计算每个字符的回文半径的过程(计算回文半径还是使用中心扩展的方法进行计算)，分为以下几种情况，</p>
+<blockquote>
+<ol>
+<li>不在任何已经计算完成的回文串的回文半径范围内<code>(i&gt;r)</code>，<strong>直接以当前位置i为中心进行扩散</strong></li>
+<li>在一个已经计算完成的回文串的回文半径范围内<code>(i&lt;=r)</code><ul>
+<li>在回文半径的最末端<code>(i==r)</code>，直接进行扩散</li>
+<li>前面对称位置的字符的回文半径L比较短<code>(i+l&lt;r)</code>，也就是<strong>当前位置I加上L还是小于回文半径的最末端R</strong>，则<code>当前位置的回文半径直接取L无需扩散</code></li>
+<li>前面对称位置的字符的回文半径L比较长<code>(i+l&gt;r)</code>，也就是<strong>当前位置I加上L还是大于等于回文半径的最末端R</strong>，则利用中间计算结果，因此我们只<strong>需要从R+1开始扩散</strong>，则<code>当前位置的回文半径为(r-i)+扩散结果</code></li>
+</ul>
+</li>
+</ol>
+</blockquote>
+</li>
+<li><p><code>还原回文子串</code>：通过得到的最大回文半径和中心点，我们可以得到回文子串在原字符串的起始索引((cidx-maxlen)&#x2F;2)</p>
+</li>
+</ol>
+<p>​	</p>
+<p>​	</p>
+<p><strong>算法模板</strong>：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-comment">// 进行预处理</span><br><span class="hljs-function">string <span class="hljs-title">manacherss</span><span class="hljs-params">(<span class="hljs-type">const</span> string&amp; s)</span></span>&#123;<br>    <span class="hljs-comment">//添加&quot;^&quot;和末尾&quot;$&quot;简化边界判断</span><br>    string t=<span class="hljs-string">&quot;^#&quot;</span>;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">char</span> c:s)&#123;<br>        t+=c;<br>        t+=<span class="hljs-string">&quot;#&quot;</span>;<br>    &#125;<br>    t+=<span class="hljs-string">&quot;$&quot;</span>;<br>    <span class="hljs-keyword">return</span> t;<br>&#125;<br><br><span class="hljs-comment">// 核心代码</span><br><span class="hljs-function">string <span class="hljs-title">manacher</span><span class="hljs-params">(<span class="hljs-type">const</span> string&amp; str)</span></span>&#123;<br>    string t= <span class="hljs-built_in">manacherss</span>(str);<br>    <span class="hljs-type">int</span> n=t.<span class="hljs-built_in">size</span>();<br>    <span class="hljs-function">vector&lt;<span class="hljs-type">int</span>&gt; <span class="hljs-title">p</span><span class="hljs-params">(n,<span class="hljs-number">0</span>)</span></span>;<br>    <span class="hljs-comment">// 回文中心点和最右边界</span><br>    <span class="hljs-type">int</span> c=<span class="hljs-number">0</span>,r=<span class="hljs-number">0</span>;<br>    <span class="hljs-comment">// 最长回文子串的回文半径和中心位置</span><br>    <span class="hljs-type">int</span> maxlen=<span class="hljs-number">0</span>,cidx=<span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">1</span>;i&lt;n<span class="hljs-number">-1</span>;++i)&#123;<br>        <span class="hljs-type">int</span> mirror=<span class="hljs-number">2</span>*c-i;   <span class="hljs-comment">//i的对称位置计算(以中心点为对称轴)</span><br>        <span class="hljs-comment">//i&lt;r,有多种情况，i+l&lt;r(l&lt;r-i)则肯定取值为p[mirror],i+l&gt;r(l&gt;r-i)就肯定取值r-i作为初始值，然后通过while扩展得到当前p[i]</span><br><span class="hljs-comment">//        if(i&lt;r) p[i]=min(r-i,p[mirror]);</span><br>        p[i]=(i&lt;r)?<span class="hljs-built_in">min</span>(r-i,p[mirror]):<span class="hljs-number">0</span>;<br>        <span class="hljs-comment">//尝试扩展回文子串</span><br>        <span class="hljs-keyword">while</span>(t[i+p[i]+<span class="hljs-number">1</span>]==t[i-p[i]<span class="hljs-number">-1</span>]) ++p[i];<br>        <span class="hljs-comment">// i+l&gt;r，更新回文中心点位置和最右边界，这样保持i+l&lt;r,然后在i&lt;r中会让p[i]更新导致，扩展时是从r+1开始</span><br>        <span class="hljs-keyword">if</span>(i+p[i]&gt;r)&#123;<br>            c=i;<br>            r=i+p[i];<br>        &#125;<br>        <span class="hljs-comment">// 更新最大回文子串的回文半径和中心位置</span><br>        <span class="hljs-keyword">if</span>(p[i]&gt;maxlen)&#123;<br>            maxlen=p[i];<br>            cidx=i;<br>        &#125;<br>    &#125;<br>    <span class="hljs-comment">// 根据中心和最大回文半径，提取原字符串中的回文子串</span><br>    <span class="hljs-type">int</span> sidx=(cidx-maxlen)/<span class="hljs-number">2</span>;<br>    <span class="hljs-keyword">return</span> str.<span class="hljs-built_in">substr</span>(sidx,maxlen);<br><br>&#125;<br></code></pre></td></tr></table></figure>
 
-
-
-
-
-
-
-
-
-
+<p>​	</p>
+<p>​	</p>
+<p><strong>例题</strong>：</p>
+<ul>
+<li><p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/longest-palindromic-substring/">力扣 5. 最长回文子串</a></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-comment">// 模板题</span><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function">string <span class="hljs-title">manacherss</span><span class="hljs-params">(<span class="hljs-type">const</span> string&amp; s)</span></span>&#123;<br>        string t=<span class="hljs-string">&quot;^#&quot;</span>;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">char</span> c:s)&#123;<br>            t+=c;<br>            t+=<span class="hljs-string">&quot;#&quot;</span>;<br>        &#125;<br>        t+=<span class="hljs-string">&quot;$&quot;</span>;<br>        <span class="hljs-keyword">return</span> t;<br>    &#125;<br>    <span class="hljs-function">string <span class="hljs-title">longestPalindrome</span><span class="hljs-params">(string s)</span> </span>&#123;<br>        string t=<span class="hljs-built_in">manacherss</span>(s);<br>        <span class="hljs-type">int</span> n=t.<span class="hljs-built_in">size</span>();<br>        <span class="hljs-function">vector&lt;<span class="hljs-type">int</span>&gt; <span class="hljs-title">p</span><span class="hljs-params">(n,<span class="hljs-number">0</span>)</span></span>;<br>        <span class="hljs-type">int</span> c=<span class="hljs-number">0</span>,r=<span class="hljs-number">0</span>;<br>        <span class="hljs-type">int</span> maxlen=<span class="hljs-number">0</span>,cidx=<span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">1</span>;i&lt;n<span class="hljs-number">-1</span>;++i)&#123;<br>            <span class="hljs-type">int</span> mirror=<span class="hljs-number">2</span>*c-i;<br>            p[i]=(i&lt;r)?<span class="hljs-built_in">min</span>(r-i,p[mirror]):<span class="hljs-number">0</span>;<br>            <span class="hljs-keyword">while</span>(t[i+p[i]+<span class="hljs-number">1</span>]==t[i-p[i]<span class="hljs-number">-1</span>]) ++p[i];<br>            <span class="hljs-keyword">if</span>(i+p[i]&gt;r)&#123;<br>                c=i;<br>                r=i+p[i];<br>            &#125;<br>            <span class="hljs-keyword">if</span>(p[i]&gt;maxlen)&#123;<br>                cidx=i;<br>                maxlen=p[i];<br>            &#125;<br>        &#125;<br>        <span class="hljs-type">int</span> sidx=(cidx-maxlen)/<span class="hljs-number">2</span>;<br>        <span class="hljs-keyword">return</span> s.<span class="hljs-built_in">substr</span>(sidx,maxlen);<br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure>
+</li>
+<li><p><a href="(https://leetcode.cn/problems/palindromic-substrings/)">力扣 647. 回文子串</a>：这题要求的并不是最长回文子串而是子串的个数，但是我们依然可以利用Manacher求解，因为当我知道一个最长回文字符串的长度可以推出它衍生的回文子串个数为(maxlen&#x2F;2)</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function">string <span class="hljs-title">manacherss</span><span class="hljs-params">(<span class="hljs-type">const</span> string&amp; s)</span></span>&#123;<br>        string t=<span class="hljs-string">&quot;^#&quot;</span>;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">char</span> c:s)&#123;<br>            t+=c;<br>            t+=<span class="hljs-string">&quot;#&quot;</span>;<br>        &#125;<br>        t+=<span class="hljs-string">&quot;$&quot;</span>;<br>        <span class="hljs-keyword">return</span> t;<br>    &#125;<br>    <span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">countSubstrings</span><span class="hljs-params">(string s)</span> </span>&#123;<br>        string t=<span class="hljs-built_in">manacherss</span>(s);<br>        <span class="hljs-type">int</span> n=t.<span class="hljs-built_in">size</span>();<br>        <span class="hljs-type">int</span> p[n];<br>        <span class="hljs-built_in">memset</span>(p,<span class="hljs-number">0</span>,<span class="hljs-built_in">sizeof</span>(p));<br>        <span class="hljs-type">int</span> c=<span class="hljs-number">0</span>,r=<span class="hljs-number">0</span>,res=<span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">1</span>;i&lt;n<span class="hljs-number">-1</span>;++i)&#123;<br>            <span class="hljs-type">int</span> mirror=<span class="hljs-number">2</span>*c-i;<br>            p[i]=(i&lt;r)?<span class="hljs-built_in">min</span>(r-i,p[mirror]):<span class="hljs-number">0</span>;<br>            <span class="hljs-keyword">while</span>(t[i+p[i]+<span class="hljs-number">1</span>]==t[i-p[i]<span class="hljs-number">-1</span>]) ++p[i];<br>            <span class="hljs-keyword">if</span>(i+p[i]&gt;r)&#123;<br>                c=i;<br>                r=i+p[i];<br>            &#125;<br>            <span class="hljs-comment">// 加上中心点才是回文字符串的长度</span><br>            res+=(p[i]+<span class="hljs-number">1</span>)/<span class="hljs-number">2</span>;<br>        &#125;<br>        <span class="hljs-keyword">return</span> res;<br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure></li>
+</ul>
+<p>​	</p>
+<p>​	</p>
 <h2 id="最近公共祖先-LCA"><a href="#最近公共祖先-LCA" class="headerlink" title="最近公共祖先(LCA)"></a>最近公共祖先(LCA)</h2><p><strong>概念</strong>：</p>
 <ul>
 <li><strong>祖先节点</strong>：给定一棵多叉树，对于其中任意非根节点x，我们称从x的父节点到根节点的路径上的所有点为x的祖先节点</li>
